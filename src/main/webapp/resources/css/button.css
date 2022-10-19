@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+.btn{
+	text-decoration:none;
+	padding:10px;
+	border-radius:5px;
+}
+
+#eliminar{
+	color:white;
+	background-color:red;
+}
+
+#modificar{
+	color:black;
+	background-color:yellow;
+}

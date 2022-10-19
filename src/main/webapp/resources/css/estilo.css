@@ -1,0 +1,80 @@
+@charset "ISO-8859-1";
+
+body{
+	margin:0px;
+}
+
+#cabecera {
+	background: black;
+	height: 100px;
+	height: 100px;
+}
+
+#automotive {
+	height: 100px;
+	width: auto;
+}
+
+
+#contImgFondo{
+	align-items:center;
+	background:url('http://localhost/img/DWES/p1/BG1.jpg');
+	background-position: center;
+	background-size: cover;
+	height:800px;
+}
+
+#textIntro{
+	margin-top:120px;
+}
+
+#contImgFondo h2{
+	color: white;
+	text-align: center;
+	font-size:100px;
+}
+
+#Snosotros{
+	background:#d83333;
+}
+
+#Snosotros h3{
+	font-size:50px;
+	margin:50px 20px 30px 50px;
+}
+
+
+#trabajo{
+	margin:0px 0px 0px -16px;
+	background:#f0f3f2;
+}
+
+#Snosotros p{
+	margin:0px 50px 50px 50px;
+}
+
+p{
+	line-height:24px;
+}
+
+#cosas{
+	margin:70px 20px 0px 20px;
+}
+
+h4{
+	font-size:20px;
+}
+
+.informacion{
+		margin:0px 40px 0px 40px;
+}
+
+.carta{
+	border-radius:15px;
+	background:#f0f3f2;
+}
+
+#marcas{
+	margin:0px 15px 0px 15px;
+	text-align:center;
+}
