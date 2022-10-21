@@ -10,6 +10,7 @@ public class Usuario {
 	private String email;
 	private String password;
 	private String image;
+	private String role;
 
 	/**
 	 * @param id
@@ -22,7 +23,7 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(int id, String nombre, String dni, String email, String password, String image) {
+	public Usuario(int id, String nombre, String dni, String email, String password, String image, String role) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -30,6 +31,7 @@ public class Usuario {
 		this.email = email;
 		this.password = password;
 		this.image = image;
+		this.role = role;
 	}
 
 	public int getId() {
@@ -80,9 +82,17 @@ public class Usuario {
 		this.image = image;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(dni, email, id, image, nombre, password);
+		return Objects.hash(dni, email, id, image, nombre, password, role);
 	}
 
 	@Override
@@ -96,13 +106,13 @@ public class Usuario {
 		Usuario other = (Usuario) obj;
 		return Objects.equals(dni, other.dni) && Objects.equals(email, other.email) && id == other.id
 				&& Objects.equals(image, other.image) && Objects.equals(nombre, other.nombre)
-				&& Objects.equals(password, other.password);
+				&& Objects.equals(password, other.password) && Objects.equals(role, other.role);
 	}
 
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", dni=" + dni + ", email=" + email + ", password="
-				+ password + ", image=" + image + "]";
+				+ password + ", image=" + image + ", role=" + role + "]";
 	}
 
 	

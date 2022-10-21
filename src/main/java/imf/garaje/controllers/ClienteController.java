@@ -102,6 +102,7 @@ public class ClienteController extends HttpServlet {
 		}
 
 		// Lanzar la vista en funcion del action recibido
+		response.setHeader("Location", request.getContextPath() + "/" + acceso);
 		RequestDispatcher vista = request.getRequestDispatcher(acceso);
 		vista.forward(request, response);
 	}

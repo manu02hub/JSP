@@ -4,6 +4,7 @@
 <%@page import="imf.garaje.modelsDAO.ModeloDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="daw"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,33 +40,21 @@
 					</tr>
 				</thead>
 				<tbody class="table-group-divider">
-					<%
-					Modelo modelo = new Modelo();
-					ArrayList<Modelo> listadoModelos = (ArrayList<Modelo>) request.getAttribute("mod");
-
-					for (int i = 0; i < listadoModelos.size(); i++) {
-						modelo = listadoModelos.get(i);
-					%>
-
-					<tr>
-
-						<th scope="row"><%=modelo.getId_modelo()%></th>
-						<td><%=modelo.getFoto_modelo()%></td>
-						<td><%=modelo.getNombre_modelo()%></td>
-						<td><%=modelo.getAnno()%></td>
-
-						<td><a
-							href="ModeloController?action=delete&id=<%=modelo.getId_modelo()%>"
-							type="button" id="eliminar" class="btn""> Eliminar</a> <a
-							href="ModeloController?action=edit&id=<%=modelo.getId_modelo()%>"
-							type="button" id="modificar"  class="btn"> Modificar</a>
-						</td>
-
-					</tr>
-
-					<%
-					}
-					%>
+					<daw:forEach var="modelo" items="${mode}">
+						<tr>
+							
+						<th scope="row">${modelo.getId_modelo()}</th>
+						<td>${modelo.getFoto_modelo()}</td>
+						<td>${modelo.getNombre_modelo()}</td>
+						<td>${modelo.getAnno()}</td>
+							<td><a
+							href="ModeloController?action=delete&id=${modelo.getId_modelo()}"
+							type="button" id="eliminar" class="btn"> Eliminar</a> <a
+							href="ModeloController?action=edit&id=${modelo.getId_modelo()}"
+							type="button" id="modificar" class="btn"> Modificar</a>
+							</td>
+						</tr>
+					</daw:forEach>
 				</tbody>
 			</table>
 

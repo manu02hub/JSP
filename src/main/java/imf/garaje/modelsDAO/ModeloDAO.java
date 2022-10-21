@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import imf.garaje.config.Conexion;
+import imf.garaje.interfaces.ModeloBd;
 import imf.garaje.models.Marca;
 import imf.garaje.models.Modelo;
 ;
@@ -19,7 +20,7 @@ import imf.garaje.models.Modelo;
  * @author manue
  *
  */
-public class ModeloDAO {
+public class ModeloDAO implements ModeloBd{
 	
 	Conexion conexion = new Conexion();
 	Connection conn;
@@ -37,6 +38,7 @@ public class ModeloDAO {
 	Modelo modelo = new Modelo();
 	ArrayList<Modelo> listado;
 	
+	@Override
 	public Modelo crearModelo(Modelo modelo) {
 		
 		String sql = "INSERT INTO modelo (foto_modelo,nombre_modelo,anno) VALUES ('" + modelo.getFoto_modelo() + "', '"
@@ -56,7 +58,8 @@ public class ModeloDAO {
 		
 		
 	}
-
+	
+	@Override
 	public boolean eliminarModelo(int id) {
 
 		String sql = "DELETE FROM modelo WHERE id_modelo = " + id;
@@ -74,6 +77,7 @@ public class ModeloDAO {
 		return true;
 	}
 
+	@Override
 	public Modelo actualizarModelo(Modelo modelo) {
 		String sql = "UPDATE modelo SET nombre_modelo = '" + modelo.getNombre_modelo()+ "',anno = '" + modelo.getAnno() +"' WHERE id_modelo=" + modelo.getId_modelo();
 		try {
@@ -87,6 +91,7 @@ public class ModeloDAO {
 		return modelo;
 	}
 
+	@Override
 	public Modelo buscarModelo(int id) {
 		String sql = "SELECT* FROM modelo WHERE id_modelo = " + id;
 
@@ -110,6 +115,7 @@ public class ModeloDAO {
 		return modelo;
 	}
 	
+	@Override
 	public Modelo find(int id) {
 		String sql = "SELECT * FROM modelo WHERE id_modelo = " + id;
 		System.out.println(sql);
@@ -131,6 +137,7 @@ public class ModeloDAO {
 		return modelo;
 	}
 
+	@Override
 	public ArrayList<Modelo> getModelos() {
 		
 		

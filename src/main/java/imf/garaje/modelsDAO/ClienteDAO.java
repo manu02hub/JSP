@@ -8,11 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import imf.garaje.config.Conexion;
+import imf.garaje.interfaces.ClienteBd;
 import imf.garaje.models.Cliente;
 
 
 
-public class ClienteDAO {
+public class ClienteDAO implements ClienteBd{
 
 	Conexion conexion = new Conexion();
 	Connection conn;
@@ -26,8 +27,9 @@ public class ClienteDAO {
 	String correo;
 
 	Cliente cliente = new Cliente();
-	ArrayList<Cliente> listado;
+	ArrayList<Cliente> listado = new ArrayList<Cliente>();
 
+	@Override
 	public Cliente crearcliente(Cliente cliente) {
 		String sql = "INSERT INTO cliente (foto,nombre, email) VALUES ('" + cliente.getFoto() + "', '"
 				+ cliente.getNombre() + "', '" + cliente.getEmail() + "')";
@@ -45,6 +47,7 @@ public class ClienteDAO {
 		return cliente;
 	}
 
+	@Override
 	public boolean eliminarcliente(int id) {
 
 		String sql = "DELETE FROM cliente WHERE id_cliente = " + id;
@@ -62,6 +65,7 @@ public class ClienteDAO {
 		return true;
 	}
 
+	@Override
 	public Cliente actualizarcliente(Cliente cliente) {
 
 		String sql = "UPDATE cliente SET nombre = '" + cliente.getNombre() + "', email = '" + cliente.getEmail()
@@ -77,6 +81,7 @@ public class ClienteDAO {
 		return cliente;
 	}
 	
+	@Override
 	public Cliente find(int id) {
 		String sql = "SELECT * FROM cliente WHERE id_cliente = " + id;
 		System.out.println(sql);
@@ -99,6 +104,7 @@ public class ClienteDAO {
 		return cliente;
 	}
 
+	@Override
 	public ArrayList<Cliente> buscarcliente(String correo) {
 		
 		String sql = "SELECT* FROM cliente WHERE email = " + correo;
@@ -128,6 +134,7 @@ public class ClienteDAO {
 		return listado;
 	}
 
+	@Override
 	public ArrayList<Cliente> getclientes() {
 
 

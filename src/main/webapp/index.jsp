@@ -4,20 +4,83 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" text="text/css" href="resources/css/login.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/estilo.css" />
-<link rel="stylesheet" text="text/css" href="resources/css/responsive.css" />
-<link rel="stylesheet" text="text/css" href="resources/css/navs/navIndex.css" />
+<link rel="stylesheet" text="text/css"
+	href="resources/css/responsive.css" />
+<link rel="stylesheet" text="text/css"
+	href="resources/css/navs/navIndex.css" />
+<script src="resources/js/jquery-3.6.0.min.js"></script>
 <title>MANUS GARAGE</title>
 </head>
 <body>
 
-	<%@include file="includes/navIndex.jsp" %>
+	<%@include file="includes/navIndex.jsp"%>
 
-	<div class="row" id="contImgFondo">
-		<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
-			<h2>ESPECIALISTAS EN WRAPPING & DETAILING</h2>
+	<%
+	String favorito = null;
+
+	// 1. Leer la cookie del navegador
+	Cookie[] cookies = request.getCookies();
+
+	// 2. Buscamos la cookie con el nombre que queremos
+	// En este caso el nombre es "deporte_favorito".
+
+	if (cookies != null) {
+		for (Cookie cookie_temporal : cookies) {
+			if ("vehiculo".equals(cookie_temporal.getName())) {
+		favorito = cookie_temporal.getValue();
+		out.print("UBICACION: " + cookie_temporal.getPath());
+		out.print("UBICACION: " + cookie_temporal.getName());
+		out.print("UBICACION: " + cookie_temporal.getValue());
+		out.print("FAVORITO: " + favorito);
+
+		if (favorito.equals("suv")) {
+		%>
+	
+		<div class="row" id="contImgFondo"
+			background=url(http://localhost/img/DWES/p1/urus.jpg>
+			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
+				<h2>SUV EN WRAPPING & DETAILING</h2>
+			</div>
 		</div>
-	</div>
+		<%
+		} else if (favorito.equals("sport")) {
+		%>
+	
+		<div class="row" id="contImgFondo"
+			background="url(http://localhost/img/DWES/p1/mclaren.jpg)">
+			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
+				<h2>SPORT EN WRAPPING & DETAILING</h2>
+			</div>
+		</div>
+		<%
+		} else {
+		%>
+	
+		<div class="row" id="contImgFondo"
+			background="url(http://localhost/img/DWES/p1/moto.jpg)">
+			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
+				<h2>MOTO EN WRAPPING & DETAILING</h2>
+			</div>
+		</div>
+		<%
+		}
+
+	}
+	}
+	}else {
+		%>
+		<div class="row" id="contImgFondo">
+			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
+				<h2>ESPECIALISTAS EN WRAPPING & DETAILING</h2>
+			</div>
+		</div>
+		<%
+		}
+	%>
+
+
 
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-4" id="Snosotros">
@@ -51,6 +114,35 @@
 						vinilado y rotulado de flotas, ediciones limitadas para
 						concesionarios, limpieza integral, detallado y mantenimiento a
 						domicilio etc.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12" id="trabajo">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4 informacion">
+					<h4>SUV</h4>
+					<form method="POST" action="suv.jsp">
+						<input type="hidden" name="suv"> <input type="submit"
+							value="Saber Más">
+					</form>
+
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 informacion">
+					<h4>SPORT</h4>
+					<form method="POST" action="sport.jsp">
+						<input type="hidden" name="sport"> <input type="submit"
+							value="Saber Más">
+					</form>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 informacion">
+					<h4>MOTOS</h4>
+					<form method="POST" action="moto.jsp">
+						<input type="hidden" name="moto"> <input type="submit"
+							value="Saber Más">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -111,4 +203,6 @@
 		</div>
 	</div>
 </body>
+
+<script src="resources/js/modal.js"></script>
 </html>

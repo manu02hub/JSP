@@ -1,5 +1,15 @@
 package imf.garaje.interfaces;
 
-public interface UsuarioBd {
+import java.util.ArrayList;
 
+import imf.garaje.models.Usuario;
+
+public interface UsuarioBd {
+	public Usuario save(Usuario usuario);
+	public boolean delete(int id);
+	public Usuario update(Usuario usuario);
+	public Usuario find(int id);
+	public ArrayList<Usuario> all();
+	public boolean validate(String email, String password);
+	public Usuario getUsuario(String email, String password);
 }

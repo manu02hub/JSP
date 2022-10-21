@@ -8,10 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import imf.garaje.config.Conexion;
+import imf.garaje.interfaces.MarcaBd;
 import imf.garaje.models.Cliente;
 import imf.garaje.models.Marca;
 
-public class MarcaDAO {
+public class MarcaDAO implements MarcaBd{
 
 	Conexion conexion = new Conexion();
 	Connection conn;
@@ -26,6 +27,7 @@ public class MarcaDAO {
 	Marca marca = new Marca();
 	ArrayList<Marca> listado;
 
+	@Override
 	public Marca crearMarca(Marca marca) {
 		String sql = "INSERT INTO marca (foto_marca,nombre_marca) VALUES ('" + marca.getFoto_marca() + "', '"
 				+ marca.getNombre_marca() + "')";
@@ -43,6 +45,7 @@ public class MarcaDAO {
 		return marca;
 	}
 
+	@Override
 	public boolean eliminarMarca(int id) {
 
 		String sql = "DELETE FROM marca WHERE id_marca = " + id;
@@ -59,6 +62,7 @@ public class MarcaDAO {
 		return true;
 	}
 
+	@Override
 	public Marca actualizarMarca(Marca marca) {
 		String sql = "UPDATE marca SET nombre_marca = '" + marca.getNombre_marca() + "' WHERE id_marca=" + marca.getId_marca();
 		try {
@@ -72,6 +76,7 @@ public class MarcaDAO {
 		return marca;
 	}
 
+	@Override
 	public Marca buscarMarca(int id) {
 		String sql = "SELECT* FROM marca WHERE id = " + id;
 
@@ -94,6 +99,7 @@ public class MarcaDAO {
 		return marca;
 	}
 
+	@Override
 	public Marca find(int id) {
 		String sql = "SELECT * FROM marca WHERE id_marca = " + id;
 		System.out.println(sql);
@@ -115,6 +121,7 @@ public class MarcaDAO {
 		return marca;
 	}
 
+	@Override
 	public ArrayList<Marca> getMarcas() {
 
 		listado = new ArrayList<Marca>();

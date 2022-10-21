@@ -65,7 +65,7 @@ public class ModeloController extends HttpServlet {
 
 			listadoModelo = modeloDAO.getModelos();
 
-			request.setAttribute("mod", listadoModelo);
+			request.setAttribute("mode", listadoModelo);
 			acceso = index;
 			break;
 
