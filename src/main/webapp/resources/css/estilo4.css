@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+body{
+	margin:0;
+}
+
+#mapa{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: #505050;
+    text-align: center;
+}

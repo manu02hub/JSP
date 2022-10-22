@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+body {
+	margin: 0px;
+}
+.blg {
+	text-align: center;
+}
+
+#blg1 {
+	margin-top: 10px;
+}
+
+#blg2 {
+	margin: 30px 20px 0px 20px;
+}
+
+#blg3 {
+	margin: -20px 150px 0px 150px;
+}
+
+#blg4 {
+	text-align: justify;
+	margin: 20px 50px 0px 50px;
+}
+
+#blg5 {
+	margin-top: 30px;
+}
+
+#textoNorris{
+	margin-top:100px;
+}
+
+.contenedor {
+	position: relative;
+	margin-top: -50px;
+	padding: 35px;
+	background: #c0c0c0;
+}

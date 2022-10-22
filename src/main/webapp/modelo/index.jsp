@@ -44,7 +44,7 @@
 						<tr>
 							
 						<th scope="row">${modelo.getId_modelo()}</th>
-						<td>${modelo.getFoto_modelo()}</td>
+						<td><img src="${modelo.getFoto_modelo()}" width="auto" height="80px"></td>
 						<td>${modelo.getNombre_modelo()}</td>
 						<td>${modelo.getAnno()}</td>
 							<td><a

@@ -29,7 +29,7 @@
 
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
-						<img src="http://localhost/img/DWES/p1/bmwM3.jpg" height="auto"
+						<img src="<%=modelo.getFoto_modelo()%>" height="auto"
 							width="250px" id="perfil">
 					</div>
 
@@ -42,6 +42,9 @@
 						<p>Año:</p>
 						<input type="text" class="controls" name="anno"
 							value="<%=modelo.getAnno()%>">
+							<p>Cambiar foto:</p>
+						<input type="file" class="controls" name="foto_modelo"
+							value="<%=modelo.getFoto_modelo()%>">
 
 					</div>
 

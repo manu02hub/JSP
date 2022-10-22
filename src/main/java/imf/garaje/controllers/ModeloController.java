@@ -121,7 +121,7 @@ public class ModeloController extends HttpServlet {
 		switch (action) {
 		case "create":
 			nombre = request.getParameter("nombre_modelo");
-			foto = request.getParameter("foto_modelo");
+			foto = request.getParameter("http://localhost/img/DWES/p1/"+foto);
 			anno = Integer.parseInt(request.getParameter("anno"));
 
 			modelo = new Modelo();
@@ -142,7 +142,7 @@ public class ModeloController extends HttpServlet {
 
 			modelo = new Modelo();
 			modelo.setId_modelo(id);
-			modelo.setFoto_modelo(foto);
+			modelo.setFoto_modelo("http://localhost/img/DWES/p1/"+foto);
 			modelo.setNombre_modelo(nombre);
 			modelo.setAnno(anno);
 

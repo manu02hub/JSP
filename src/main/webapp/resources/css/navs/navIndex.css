@@ -1,11 +1,21 @@
 @charset "ISO-8859-1";
 
+#cabecera {
+	background: black;
+	height: 100px;
+	height: 100px;
+}
 
-header{
+#automotive {
+	height: 100px;
+	width: auto;
+}
+
+header {
 	margin: 0px 0px 0px 20px;
 }
 
-nav{
+nav {
 	text-align: left;
 }
 

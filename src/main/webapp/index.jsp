@@ -4,8 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta charset="UTF-8" />
 <link rel="stylesheet" text="text/css" href="resources/css/login.css" />
+<link rel="stylesheet" text="text/css" href="resources/css/footer.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/estilo.css" />
+<link rel="stylesheet" text="text/css" href="resources/css/button.css" />
 <link rel="stylesheet" text="text/css"
 	href="resources/css/responsive.css" />
 <link rel="stylesheet" text="text/css"
@@ -25,60 +28,46 @@
 
 	// 2. Buscamos la cookie con el nombre que queremos
 	// En este caso el nombre es "deporte_favorito".
-
 	if (cookies != null) {
-		for (Cookie cookie_temporal : cookies) {
-			if ("vehiculo".equals(cookie_temporal.getName())) {
-		favorito = cookie_temporal.getValue();
-		out.print("UBICACION: " + cookie_temporal.getPath());
-		out.print("UBICACION: " + cookie_temporal.getName());
-		out.print("UBICACION: " + cookie_temporal.getValue());
-		out.print("FAVORITO: " + favorito);
+		//out.print(cookies[cookies.length - 1].getName());
 
-		if (favorito.equals("suv")) {
-		%>
-	
-		<div class="row" id="contImgFondo"
-			background=url(http://localhost/img/DWES/p1/urus.jpg>
-			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
-				<h2>SUV EN WRAPPING & DETAILING</h2>
-			</div>
-		</div>
-		<%
-		} else if (favorito.equals("sport")) {
-		%>
-	
-		<div class="row" id="contImgFondo"
-			background="url(http://localhost/img/DWES/p1/mclaren.jpg)">
-			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
-				<h2>SPORT EN WRAPPING & DETAILING</h2>
-			</div>
-		</div>
-		<%
-		} else {
-		%>
-	
-		<div class="row" id="contImgFondo"
-			background="url(http://localhost/img/DWES/p1/moto.jpg)">
-			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
-				<h2>MOTO EN WRAPPING & DETAILING</h2>
-			</div>
-		</div>
-		<%
-		}
-
-	}
-	}
-	}else {
-		%>
-		<div class="row" id="contImgFondo">
-			<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
-				<h2>ESPECIALISTAS EN WRAPPING & DETAILING</h2>
-			</div>
-		</div>
-		<%
-		}
+		if ("moto".equals(cookies[cookies.length - 1].getName())) {
 	%>
+
+	<div class="row" id="contImgFondoMoto"></div>
+	<%
+	} else if ("suv".equals(cookies[cookies.length - 1].getName())) {
+	%>
+
+	<div class="row" id="contImgFondoSuv"></div>
+	<%
+	} else if ("sport".equals(cookies[cookies.length - 1].getName())) {
+	%>
+
+	<div class="row" id="contImgFondoSport"></div>
+	<%
+	} else {
+	%>
+
+	<div class="row" id="contImgFondo">
+		<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
+			<h2>ESPECIALISTAS EN WRAPPING & DETAILING</h2>
+		</div>
+	</div>
+	<%
+	}
+
+	} else {
+	%>
+	<div class="row" id="contImgFondo">
+		<div class="col-lg-12 col-md-12 col-sm-12" id="textIntro">
+			<h2>ESPECIALISTAS EN WRAPPING & DETAILING</h2>
+		</div>
+	</div>
+	<%
+	}
+	%>
+
 
 
 
@@ -120,28 +109,34 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12" id="trabajo">
+		<div class="col-lg-12 col-md-12 col-sm-12">
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-4 informacion">
+				<div class="col-lg-4 col-md-4 col-sm-4 vehiculosForm">
 					<h4>SUV</h4>
+					<img src="http://localhost/img/DWES/p1/urus.jpg" height="300px"
+						width="480px">
 					<form method="POST" action="suv.jsp">
-						<input type="hidden" name="suv"> <input type="submit"
-							value="Saber Más">
+						<input type="hidden" name="suv" value="suv"> <input
+							type="submit" value="Saber Más" class="btnCookies">
 					</form>
 
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 informacion">
+				<div class="col-lg-4 col-md-4 col-sm-4 vehiculosForm">
 					<h4>SPORT</h4>
+					<img src="http://localhost/img/DWES/p1/mclaren.jpg" height="300px"
+						width="480px">
 					<form method="POST" action="sport.jsp">
-						<input type="hidden" name="sport"> <input type="submit"
-							value="Saber Más">
+						<input type="hidden" name="sport" value="sport"> <input
+							type="submit" value="Saber Más" class="btnCookies">
 					</form>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 informacion">
+				<div class="col-lg-4 col-md-4 col-sm-4 vehiculosForm">
 					<h4>MOTOS</h4>
+					<img src="http://localhost/img/DWES/p1/moto.jpg" height="300px"
+						width="480px">
 					<form method="POST" action="moto.jsp">
-						<input type="hidden" name="moto"> <input type="submit"
-							value="Saber Más">
+						<input type="hidden" name="moto" value="moto"> <input
+							type="submit" value="Saber Más" class="btnCookies">
 					</form>
 				</div>
 			</div>
@@ -202,6 +197,8 @@
 			<img src="http://localhost/img/DWES/p1/marca16.png">
 		</div>
 	</div>
+
+	<%@include file="includes/footer.jsp"%>
 </body>
 
 <script src="resources/js/modal.js"></script>

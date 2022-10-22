@@ -1,8 +1,8 @@
 package imf.garaje.modelsDAO;
 
+import java.io.File;
+
 public class SubirFoto {
 
-	public void subirFoto(String foto) {
-		
-	}
+	
 }

@@ -79,7 +79,7 @@ public class ModeloDAO implements ModeloBd{
 
 	@Override
 	public Modelo actualizarModelo(Modelo modelo) {
-		String sql = "UPDATE modelo SET nombre_modelo = '" + modelo.getNombre_modelo()+ "',anno = '" + modelo.getAnno() +"' WHERE id_modelo=" + modelo.getId_modelo();
+		String sql = "UPDATE modelo SET nombre_modelo = '" + modelo.getNombre_modelo()+ "',anno = '" + modelo.getAnno()+ "',foto_modelo = '" + modelo.getFoto_modelo() +"' WHERE id_modelo=" + modelo.getId_modelo();
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -129,6 +129,7 @@ public class ModeloDAO implements ModeloBd{
 				modelo.setId_modelo(rs.getInt("id_modelo"));
 				modelo.setNombre_modelo(rs.getString("nombre_modelo"));
 				modelo.setAnno(rs.getInt("anno"));
+				modelo.setFoto_modelo(rs.getString("foto_modelo"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -125,7 +125,7 @@ public class ClienteController extends HttpServlet {
 			foto = request.getParameter("fotocliente");
 
 			cliente = new Cliente();
-			cliente.setFoto(foto);
+			cliente.setFoto("http://localhost/img/DWES/p1/"+foto);
 			cliente.setNombre(nombre);
 			cliente.setEmail(email);
 
@@ -140,11 +140,13 @@ public class ClienteController extends HttpServlet {
 			id = Integer.parseInt(request.getParameter("id"));
 			nombre = request.getParameter("nombre");
 			email = request.getParameter("email");
+			foto = request.getParameter("fotocliente");
 
 			cliente = new Cliente();
 			cliente.setId(id);
 			cliente.setNombre(nombre);
 			cliente.setEmail(email);
+			cliente.setFoto("http://localhost/img/DWES/p1/"+foto);
 
 			clienteDAO.actualizarcliente(cliente);
 

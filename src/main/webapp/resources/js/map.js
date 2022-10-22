@@ -1,6 +1,5 @@
 
 
-
 var data = {
     "ES-B": 200, // Barcelona
     "ES-M": 300, // Madrid
@@ -26,5 +25,3 @@ $('#my-map').vectorMap({
     //    el.html(el.html()+' (Poblacion: '+data[code]+')');
     //}
 });
-
-

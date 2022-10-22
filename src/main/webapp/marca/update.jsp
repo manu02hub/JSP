@@ -28,7 +28,7 @@
 
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-4">
-						<img src="http://localhost/img/DWES/p1/bmw.jpg" height="100px"
+						<img src="<%=marca.getFoto_marca()%>" height="auto"
 							width="100px" id="perfil">
 					</div>
 
@@ -38,6 +38,12 @@
 						<p>Nombre:</p>
 						<input type="text" class="controls" name="nombre_marca"
 							value="<%=marca.getNombre_marca()%>">
+						<p>Cambiar Foto:</p>
+						<input type="file" name=foto class="controls"
+							value="<%=marca.getFoto_marca()%>">
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12">
 						<button class="botons" type="submit">Actualizar</button>
 					</div>
 				</div>

@@ -59,4 +59,14 @@
     <servlet-name>UsuarioController</servlet-name>
     <url-pattern>/UsuarioController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AuxController</display-name>
+    <servlet-name>AuxController</servlet-name>
+    <servlet-class>imf.garaje.controllers.AuxController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuxController</servlet-name>
+    <url-pattern>/AuxController</url-pattern>
+  </servlet-mapping>
 </web-app>

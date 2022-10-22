@@ -44,7 +44,7 @@
 						<tr>
 							
 						<th scope="row">${marca.getId_marca()}</th>
-						<td>${marca.getFoto_marca()}</td>
+						<td><img src="${marca.getFoto_marca()}" width="auto" height="80px"></td>
 						<td>${marca.getNombre_marca()}</td>
 							<td><a
 							href="MarcaController?action=delete&id=${marca.getId_marca()}"

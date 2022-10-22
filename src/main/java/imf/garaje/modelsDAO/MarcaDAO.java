@@ -64,7 +64,7 @@ public class MarcaDAO implements MarcaBd{
 
 	@Override
 	public Marca actualizarMarca(Marca marca) {
-		String sql = "UPDATE marca SET nombre_marca = '" + marca.getNombre_marca() + "' WHERE id_marca=" + marca.getId_marca();
+		String sql = "UPDATE marca SET nombre_marca = '" + marca.getNombre_marca() + "', foto_marca = '" + marca.getFoto_marca() + "' WHERE id_marca=" + marca.getId_marca();
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -112,6 +112,7 @@ public class MarcaDAO implements MarcaBd{
 			while (rs.next()) {
 				marca.setId_marca(rs.getInt("id_marca"));
 				marca.setNombre_marca(rs.getString("nombre_marca"));
+				marca.setFoto_marca(rs.getString("foto_marca"));
 
 			}
 		} catch (SQLException e) {

@@ -69,7 +69,7 @@ public class ClienteDAO implements ClienteBd{
 	public Cliente actualizarcliente(Cliente cliente) {
 
 		String sql = "UPDATE cliente SET nombre = '" + cliente.getNombre() + "', email = '" + cliente.getEmail()
-				+ "' WHERE id_cliente=" + cliente.getId();
+		+ "', foto = '" + cliente.getFoto()+ "' WHERE id_cliente=" + cliente.getId();
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -95,6 +95,7 @@ public class ClienteDAO implements ClienteBd{
 				cliente.setId(rs.getInt("id_cliente"));
 				cliente.setNombre(rs.getString("nombre"));
 				cliente.setEmail(rs.getString("email"));
+				cliente.setFoto(rs.getString("foto"));
 				
 			}
 		} catch (SQLException e) {

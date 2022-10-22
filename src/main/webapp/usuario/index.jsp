@@ -26,45 +26,42 @@
 <body>
 
 
-	<%-- <h1>MARCA EDIT</h1>
 	<%
-	//Usuario usuario = (Usuario) request.getAttribute("usu");
+	Usuario usuario = (Usuario) request.getAttribute("usu");
 	%>
-	<div class=row><
+
+	<div class=row>
 		<div class="col-lg-3 col-md-3 col-sm-3"></div>
 		<div class="col-lg-6 col-md-6 col-sm-6 form-register"
 			id="contenedorForm">
 
-
-			<form method="POST" action="ModeloController?action=update">
+			<form method="POST" action="ClienteController?action=update">
 
 				<div class="row">
-
-					<div class="col-lg-12 col-md-12 col-sm-12">
-
-						<p><%=//usuario.getNombre()%></p>
-
-						<input type="hidden" name="id" value="<%=usuario.getId()%>">
-						<p>Nombre:</p>
-						<input type="text" name="nombre_modelo" class="controls"
-							value="<%=//usuario.getNombre()%>"> <br>
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<img src="http://localhost/img/DWES/p1/perfil.jpg" height="120px" width="auto" id="perfil">
 					</div>
 					
-					<div class="col-lg-12 col-md-12 col-sm-12">
-
-						<p>Mis reservas</p>
-
-						<input type="hidden" name="id" value="<%=//usuario.getId()%>">
+					<div class="col-lg-8 col-md-8 col-sm-8">
+						<input type="hidden" name="id" value="<%=usuario.getId()%>">
 						<p>Nombre:</p>
-						<input type="text" name="nombre_modelo" class="controls"
-							value="<%=//usuario.getNombre()%>"> <br>
+						<input type="text" name="nombre" class="controls"
+							value="<%=usuario.getNombre()%>">
+						<p>Email:</p>
+						<input type="email" name="email" class="controls"
+							value="<%=usuario.getEmail()%>">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<button class="botons" type="submit">Actualizar</button>
 					</div>
 				</div>
-			</form>
 
+			</form>
 		</div>
+
 		<div class="col-lg-3 col-md-3 col-sm-3"></div>
-	</div> --%>
+	</div>
+
 	<h1>HOLA ESTOY EN MI HOME</h1>
 	<a href="UsuariosController?action=index">Index usuarios</a>
 	<a href="AuthController?action=logout">Cerrar sesion</a>

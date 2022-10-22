@@ -47,7 +47,7 @@
 						<tr>
 							
 						<th scope="row">${cliente.getId()}</th>
-						<td>${cliente.getFoto()}</td>
+						<td><img src="${cliente.getFoto()}" width="auto" height="80px"></td>
 						<td>${cliente.getNombre()}</td>
 						<td>${cliente.getEmail()}</td>
 							<td><a

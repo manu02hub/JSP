@@ -120,7 +120,7 @@ private static final long serialVersionUID = 1L;
 					foto = request.getParameter("foto_marca");
 
 					marca = new Marca();
-					marca.setFoto_marca(foto);
+					marca.setFoto_marca("http://localhost/img/DWES/p1/"+foto);
 					marca.setNombre_marca(nombre);
 				
 					System.out.println(marca.toString());
@@ -133,10 +133,12 @@ private static final long serialVersionUID = 1L;
 				case "update":
 					id = Integer.parseInt(request.getParameter("id"));
 					nombre = request.getParameter("nombre_marca");
+					foto = request.getParameter("foto");
 
 					marca = new Marca();
 					marca.setId_marca(id);
 					marca.setNombre_marca(nombre);
+					marca.setFoto_marca("http://localhost/img/DWES/p1/"+foto);
 					
 
 					marcaDAO.actualizarMarca(marca);

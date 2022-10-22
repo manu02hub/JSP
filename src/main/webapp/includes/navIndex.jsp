@@ -20,9 +20,10 @@
 		<div class="col-lg-9 col-md-9 col-sm-9">
 			<nav>
 				<ul>
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">SUV</a></li>
-					<li><a href="ClienteController?action=index" type="button">SPORT</a></li>
+					<li><a href="index.jsp">HOME</a></li>
+					<li><a href="suv.jsp">SUV</a></li>
+					<li><a href="sport.jsp">SPORT</a></li>
+					<li><a href="moto.jsp">MOTOS</a></li>
 					<%
 					if (request.getSession().getAttribute("usuario") == null) {
 					%>
