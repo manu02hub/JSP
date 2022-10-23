@@ -32,9 +32,9 @@ public class UsuarioController extends HttpServlet {
 	ClienteDAO clienteDAO = new ClienteDAO();
 	ArrayList<Cliente> listadoClientes;
 
-	String nombre, email, password,dni;
+	String nombre, email, password, dni;
 
-	//Rutas
+	// Rutas
 	String index = "usuario/index.jsp";
 	String indexUsu = "cliente/index.jsp";
 	String create = "usuario/create.jsp";
@@ -103,7 +103,7 @@ public class UsuarioController extends HttpServlet {
 		switch (action) {
 		case "create":
 			nombre = request.getParameter("nombre");
-			dni =request.getParameter("dni");
+			dni = request.getParameter("dni");
 			email = request.getParameter("email");
 			password = request.getParameter("password");
 
@@ -112,7 +112,7 @@ public class UsuarioController extends HttpServlet {
 			usuario.setEmail(email);
 			usuario.setDni(dni);
 			usuario.setPassword(getMD5(password));
-			
+
 			usuarioDAO.save(usuario);
 			if (usuarioDAO.validate(email, getMD5(password))) {
 				// Correcto, usuario existe con email y password correctos
@@ -120,14 +120,14 @@ public class UsuarioController extends HttpServlet {
 				request.getSession().setAttribute("usuario", usuarioDAO.getUsuario(email, getMD5(password)));
 				ArrayList<Usuario> usuarios = usuarioDAO.all();
 				request.getSession().setAttribute("usuarios", usuarios);
-				
-				//recojo todos los clientes
+
+				// recojo todos los clientes
 				listadoClientes = clienteDAO.getclientes();
 
-				//Mandamos este array a la siguiente vista
+				// Mandamos este array a la siguiente vista
 				request.setAttribute("cli", listadoClientes);
 				acceso = indexUsu;
-				
+
 			} else {
 				acceso = index;
 				// Al ser un error, puedo enviar un mensaje con setAttribute
@@ -151,7 +151,7 @@ public class UsuarioController extends HttpServlet {
 			}
 			// Si usuario no introduce password, no hay setPassword. Queda en null
 			usuarioDAO.update(usuario);
-			
+
 			request.getSession().removeAttribute("usuario");
 			acceso = salir;
 			break;

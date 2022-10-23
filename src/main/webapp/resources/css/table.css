@@ -1,31 +1,31 @@
 @charset "ISO-8859-1";
+
 table {
-	border-collapse: collapse;/*Bordes compartidos*/
-	width:100%;/*Ancho*/
+	border-collapse: collapse; /*Bordes compartidos*/
+	width: 100%; /*Ancho*/
 }
 
 th, td {
-	text-align: center;/*Centrar texto*/
+	text-align: center; /*Centrar texto*/
 }
 
-tr{
-	background-color: white;/*Color de fondo*/
-	padding:10px;/*Relleno*/
+tr {
+	background-color: white; /*Color de fondo*/
+	padding: 10px; /*Relleno*/
 }
 
 tr:nth-child(even) {
-	background-color: #f2f2f2;/*Color de fondo*/
-	padding:10px;/*Relleno*/
+	background-color: #f2f2f2; /*Color de fondo*/
+	padding: 10px; /*Relleno*/
 }
 
 th {
-	background-color: #2a2a2a;/*Color de fondos*/
-	color: white;/*Color text*/
-	padding:5px;/*Relleno*/
+	background-color: #2a2a2a; /*Color de fondos*/
+	color: white; /*Color text*/
+	padding: 5px; /*Relleno*/
 }
 
-#contenedorTabla{
-	align-items:center;/*Centra*/
-	text-align:center;/*Centra*/
+#contenedorTabla {
+	align-items: center; /*Centra*/
+	text-align: center; /*Centra*/
 }
-

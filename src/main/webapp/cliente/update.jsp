@@ -3,7 +3,7 @@
 
 <%@page import="imf.garaje.models.Cliente"%>
 <%@page import="imf.garaje.modelsDAO.ClienteDAO"%>
-<%@ include file = "../login/login-validation.jsp" %>
+<%@ include file="../login/login-validation.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +39,7 @@
 			id="contenedorForm">
 
 			<form method="POST" action="ClienteController?action=update">
-			<h4>FORMULARIO ACTUALIZAR CLIENTE</h4>
+				<h4>FORMULARIO ACTUALIZAR CLIENTE</h4>
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<img src="<%=cliente.getFoto()%>" height="auto" width="120px"

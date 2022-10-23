@@ -2,35 +2,35 @@
 
 #cabecera {
 	background: black; /*Color fondo*/
-	height: 100px;/*Boton de suv, sport ,moto*/
+	height: 100px; /*Boton de suv, sport ,moto*/
 }
 /*Imagen logo*/
 #automotive {
-	height: 100px;/*Alto*/
-	width: auto;/*Ancho*/
+	height: 100px; /*Alto*/
+	width: auto; /*Ancho*/
 }
 
 header {
-	margin: 0px 0px 0px 20px;/*Margenes top right bottom left*/
+	margin: 0px 0px 0px 20px; /*Margenes top right bottom left*/
 }
 /*Boton de suv, sport ,moto*/
 nav {
-	text-align: left;/*Texto posicionado a la izquierda*/
+	text-align: left; /*Texto posicionado a la izquierda*/
 }
 /*Lista*/
 ul {
-	margin: 40px 0px 0px 150px;/*Margen de la lista*/
-	list-style: none;/*Quitar propiedad de lista*/
+	margin: 40px 0px 0px 150px; /*Margen de la lista*/
+	list-style: none; /*Quitar propiedad de lista*/
 }
 /*Contenido de la lista*/
 li {
-	margin: 0px 30px 0px 0px;/*Margenes top right bottom left*/
-	display: inline-block;/*Posicion en linea*/
+	margin: 0px 30px 0px 0px; /*Margenes top right bottom left*/
+	display: inline-block; /*Posicion en linea*/
 }
 /*Enlaces*/
 a {
-	text-decoration-line: none;/*Sin linea de enlace*/
-	color: white;/*Color texto*/
-	font-weight: bold;/*Tipo de letra*/
-	font-size: 20px;/*tamaño*/
+	text-decoration-line: none; /*Sin linea de enlace*/
+	color: white; /*Color texto*/
+	font-weight: bold; /*Tipo de letra*/
+	font-size: 20px; /*tamaño*/
 }

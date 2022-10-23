@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="imf.garaje.models.Marca"%>
 <%@page import="imf.garaje.modelsDAO.MarcaDAO"%>
-<%@ include file = "../login/login-validation.jsp" %>
+<%@ include file="../login/login-validation.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>

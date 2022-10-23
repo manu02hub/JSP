@@ -38,6 +38,7 @@ public class AuthController extends HttpServlet {
 	String login = "login/login.jsp";
 	String home = "usuario/index.jsp";
 	String privat = "cliente/index.jsp";
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -88,11 +89,11 @@ public class AuthController extends HttpServlet {
 			 * Realizo el login de mi aplicacion
 			 */
 
-			//Recojo los datos del form
+			// Recojo los datos del form
 			email = request.getParameter("email");
 			password = request.getParameter("password");
-		
-			//Valido que sea correcto
+
+			// Valido que sea correcto
 			if (usuarioDAO.validate(email, getMD5(password))) {
 				// Correcto, usuario existe con email y password correctos
 				/* Debo guardar en sesion mi objeto Usuario con los datos correspondientes */
@@ -101,11 +102,11 @@ public class AuthController extends HttpServlet {
 
 				ArrayList<Usuario> usuarios = usuarioDAO.all();
 				request.getSession().setAttribute("usuarios", usuarios);
-				
-				//recojo todos los clientes
+
+				// recojo todos los clientes
 				listadoClientes = clienteDAO.getclientes();
 
-				//Mandamos este array a la siguiente vista
+				// Mandamos este array a la siguiente vista
 				request.setAttribute("cli", listadoClientes);
 				acceso = privat;
 
@@ -122,10 +123,10 @@ public class AuthController extends HttpServlet {
 		vista.forward(request, response);
 	}
 
-	//Metodo para encriptar la contraseña
+	// Metodo para encriptar la contraseña
 	public String getMD5(String input) {
 		try {
-			//Encriptamos la contraseña a traves del algoritmo MD5
+			// Encriptamos la contraseña a traves del algoritmo MD5
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			byte[] encBytes = md.digest(input.getBytes());
 			BigInteger numero = new BigInteger(1, encBytes);

@@ -1,58 +1,58 @@
 @charset "ISO-8859-1";
 
 .form-register {
-  width: 400px;/*ancho*/
-  background: #ffffdf;/*fondo color*/
-  padding: 30px 50px 30px 30px;/*margen arriba derecha abajo izquierda*/
-  margin: auto;/**/
-  margin-top: 100px; /*margen arriba*/
-  border-radius: 4px;/*bordes circulares*/
-  font-family: 'calibri';/*tipo de letra */
-  color: black;/*color texto*/
-  box-shadow: 7px 13px 37px #000;/*sombra de la caja*/
+	width: 400px; /*ancho*/
+	background: #ffffdf; /*fondo color*/
+	padding: 30px 50px 30px 30px; /*margen arriba derecha abajo izquierda*/
+	margin: auto; /**/
+	margin-top: 100px; /*margen arriba*/
+	border-radius: 4px; /*bordes circulares*/
+	font-family: 'calibri'; /*tipo de letra */
+	color: black; /*color texto*/
+	box-shadow: 7px 13px 37px #000; /*sombra de la caja*/
 }
 
 .form-register h4 {
-  font-size: 22px;/*tamano de letra*/
-  margin-bottom: 20px;/*margin abajo*/
+	font-size: 22px; /*tamano de letra*/
+	margin-bottom: 20px; /*margin abajo*/
 }
 
 .controls {
-  width: 100%;/*ancho*/
-  background: #e6e6e6;/*color de fondo*/
-  padding: 9px;/*relleno*/
-  border-radius: 4px;/*borde circular*/
-  margin-bottom: 10px;/*margen abajo*/
-  border: 1px solid #1f53c5;/*borde de 1px linea azul*/
-  font-family: 'calibri';/*tipo de letra*/
-  font-size: 18px;/*tamaño de letra*/
-  color: black;/*color de letra*/
+	width: 100%; /*ancho*/
+	background: #e6e6e6; /*color de fondo*/
+	padding: 9px; /*relleno*/
+	border-radius: 4px; /*borde circular*/
+	margin-bottom: 10px; /*margen abajo*/
+	border: 1px solid #1f53c5; /*borde de 1px linea azul*/
+	font-family: 'calibri'; /*tipo de letra*/
+	font-size: 18px; /*tamaño de letra*/
+	color: black; /*color de letra*/
 }
 
 .form-register a {
-  color: black;/*color de letra as*/
-  text-decoration: none;/*quieta la decoracion al link*/
+	color: black; /*color de letra as*/
+	text-decoration: none; /*quieta la decoracion al link*/
 }
 
 .form-register .botons {
-  width: 100%;/*ancho*/
-  background: #1f53c5;/*color de fondo*/
-  border: none;/*sin borde*/
-  padding: 12px;/*relleno*/
-  color: white;/*color*/
-  margin: 16px;/*margen*/
-  font-size: 16px;/*tamaño letra*/
+	width: 100%; /*ancho*/
+	background: #1f53c5; /*color de fondo*/
+	border: none; /*sin borde*/
+	padding: 12px; /*relleno*/
+	color: white; /*color*/
+	margin: 16px; /*margen*/
+	font-size: 16px; /*tamaño letra*/
 }
 
-p{
-	font-size:17px;/*tamalo de letra*/
+p {
+	font-size: 17px; /*tamalo de letra*/
 	margin-bottom: 3px; /*margen abajo*/
 }
 
-#perfil{
-	margin-top:40px; /*margen arriba*/
+#perfil {
+	margin-top: 40px; /*margen arriba*/
 }
 
-#miperfil{
-	text-align:center;
+#miperfil {
+	text-align: center;
 }

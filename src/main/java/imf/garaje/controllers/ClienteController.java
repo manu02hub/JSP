@@ -31,7 +31,7 @@ public class ClienteController extends HttpServlet {
 
 	String filtro = null;
 
-	//Rutas
+	// Rutas
 	String index = "cliente/index.jsp";
 	String create = "cliente/create.jsp";
 	String edit = "cliente/update.jsp";
@@ -62,17 +62,17 @@ public class ClienteController extends HttpServlet {
 		switch (action) {
 		case "index":
 
-			//recojo todos los clientes
+			// recojo todos los clientes
 			listadoClientes = clienteDAO.getclientes();
 
-			//Mandamos este array a la siguiente vista
+			// Mandamos este array a la siguiente vista
 			request.setAttribute("cli", listadoClientes);
 			acceso = index;
 			break;
 
 		case "buscadorCliente":
 
-			//Metodo no funcional
+			// Metodo no funcional
 			filtro = request.getParameter("buscadorCliente");
 
 			listadoClientes = clienteDAO.buscarcliente(request.getParameter("buscador"));
@@ -96,14 +96,14 @@ public class ClienteController extends HttpServlet {
 			break;
 
 		case "delete":
-			
-			//En caso de eliminar recoemos id y llamamos al método correspondiente
+
+			// En caso de eliminar recoemos id y llamamos al método correspondiente
 			id = Integer.parseInt(request.getParameter("id"));
 			clienteDAO.eliminarcliente(id);
-			
-			//recojo todos los clientes
+
+			// recojo todos los clientes
 			listadoClientes = clienteDAO.getclientes();
-			//Mandamos este array a la siguiente vista
+			// Mandamos este array a la siguiente vista
 			request.setAttribute("cli", listadoClientes);
 
 			acceso = index;
@@ -124,37 +124,37 @@ public class ClienteController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		acceso = "";
 		action = request.getParameter("action"); // valor que recojo por url
 
-		
 		switch (action) {
 		case "create":
-			
-			//recogemos los datos después de rellear el formulario
+
+			// recogemos los datos después de rellear el formulario
 			nombre = request.getParameter("nombre");
 			email = request.getParameter("email");
 			foto = request.getParameter("fotocliente");
 
-			//Creamos un nuevo cliente con estos datos
+			// Creamos un nuevo cliente con estos datos
 			cliente = new Cliente();
-			cliente.setFoto("http://localhost/img/DWES/p1/"+foto);
+			cliente.setFoto("http://localhost/img/DWES/p1/" + foto);
 			cliente.setNombre(nombre);
 			cliente.setEmail(email);
 
 			clienteDAO.crearcliente(cliente);
-			//recojo todos los clientes
+			// recojo todos los clientes
 			listadoClientes = clienteDAO.getclientes();
-			//Mandamos este array a la siguiente vista
+			// Mandamos este array a la siguiente vista
 			request.setAttribute("cli", listadoClientes);
 			acceso = index;
 
 			break;
 
 		case "update":
-			
-			//recogemos de nuevo los datos pero esta vez  obtenemos el id para actualizar datos
+
+			// recogemos de nuevo los datos pero esta vez obtenemos el id para actualizar
+			// datos
 			id = Integer.parseInt(request.getParameter("id"));
 			nombre = request.getParameter("nombre");
 			email = request.getParameter("email");
@@ -164,12 +164,12 @@ public class ClienteController extends HttpServlet {
 			cliente.setId(id);
 			cliente.setNombre(nombre);
 			cliente.setEmail(email);
-			cliente.setFoto("http://localhost/img/DWES/p1/"+foto);
+			cliente.setFoto("http://localhost/img/DWES/p1/" + foto);
 
 			clienteDAO.actualizarcliente(cliente);
-			//recojo todos los clientes
+			// recojo todos los clientes
 			listadoClientes = clienteDAO.getclientes();
-			//Mandamos este array a la siguiente vista
+			// Mandamos este array a la siguiente vista
 			request.setAttribute("cli", listadoClientes);
 
 			acceso = index;

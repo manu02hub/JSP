@@ -5,11 +5,13 @@ body {
 }
 
 #contImgFondo {
-	align-items: center; /*alineación de un elemento dentro del bloque que lo contiene.*/
-	background: url('http://localhost/img/DWES/p1/BG1.jpg');/*url de la imagen*/
-	background-position: center;/*Centra la imagen*/
-	background-size: cover;/*Posicionamiento fondo*/
-	height: 800px;/*alto.*/
+	align-items: center;
+	/*alineación de un elemento dentro del bloque que lo contiene.*/
+	background: url('http://localhost/img/DWES/p1/BG1.jpg');
+	/*url de la imagen*/
+	background-position: center; /*Centra la imagen*/
+	background-size: cover; /*Posicionamiento fondo*/
+	height: 800px; /*alto.*/
 }
 
 #contImgFondoMoto {
@@ -44,8 +46,8 @@ body {
 /*TEstilos del h2 que se encuntrea dentro del contenedor*/
 #contImgFondo h2 {
 	color: white; /*Color texto*/
-	text-align: center;/* texto centrado*/
-	font-size: 100px;/*Tamaño letras*/
+	text-align: center; /* texto centrado*/
+	font-size: 100px; /*Tamaño letras*/
 }
 
 #Snosotros {
@@ -54,17 +56,19 @@ body {
 
 /*Texto h3 que se encuentra dentro del div*/
 #Snosotros h3 {
-	font-size: 50px;/*Tamaño letra*/
-	margin: 50px 20px 30px 50px;/*Margen arriba, derecha, abajo, izquierda*/
+	font-size: 50px; /*Tamaño letra*/
+	margin: 50px 20px 30px 50px;
+	/*Margen arriba, derecha, abajo, izquierda*/
 }
 
 #trabajo {
-	margin: 0px 0px 0px -16px;  /*Margen arriba, derecha, abajo, izquierda*/
+	margin: 0px 0px 0px -16px; /*Margen arriba, derecha, abajo, izquierda*/
 	background: #f0f3f2; /*Fondo*/
 }
 
 #Snosotros p {
-	margin: 0px 50px 50px 50px; /*Margen arriba, derecha, abajo, izquierda*/
+	margin: 0px 50px 50px 50px;
+	/*Margen arriba, derecha, abajo, izquierda*/
 }
 
 p {
@@ -72,7 +76,8 @@ p {
 }
 
 #cosas {
-	margin: 70px 20px 0px 20px; /*Margen arriba, derecha, abajo, izquierda*/
+	margin: 70px 20px 0px 20px;
+	/*Margen arriba, derecha, abajo, izquierda*/
 }
 
 h4 {
@@ -85,19 +90,19 @@ h4 {
 
 .carta {
 	border-radius: 15px; /*Bordes circulares*/
-	background: #f0f3f2;/*Fondo color*/
+	background: #f0f3f2; /*Fondo color*/
 }
 
 #marcas {
-	margin: 0px 15px 0px 15px;/*Margen arriba, derecha, abajo, izquierda*/
-	text-align: center;/*Texto centrado*/
+	margin: 0px 15px 0px 15px; /*Margen arriba, derecha, abajo, izquierda*/
+	text-align: center; /*Texto centrado*/
 }
 
 .vehiculosForm {
-	text-align: center;/*Texto centrado*/
-	margin: 10px;/*Margen arriba, derecha, abajo, izquierda*/
+	text-align: center; /*Texto centrado*/
+	margin: 10px; /*Margen arriba, derecha, abajo, izquierda*/
 }
 
 .vehiculosForm h4 {
-	margin-bottom: 10px;/*Margen abajo*/
+	margin-bottom: 10px; /*Margen abajo*/
 }

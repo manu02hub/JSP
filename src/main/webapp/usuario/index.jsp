@@ -48,8 +48,7 @@
 				<h4>MI PEFIL</h4>
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12" id="miperfil">
-						<img src="<%=u.getImage()%>" height="80%" width="70%"
-							id="perfil">
+						<img src="<%=u.getImage()%>" height="80%" width="70%" id="perfil">
 					</div>
 
 					<div class="col-lg-12 col-md-12 col-sm-12">
@@ -64,11 +63,10 @@
 						<input type="password" name="password" class="controls">
 					</div>
 					<div class="col-lg-12 col-md-12 col-sm-12">
-						<a
-							href="UsuarioController?action=delete&id=<%=u.getId()%>"
-							type="submit" id="eliminar" class="btn"> Eliminar</a> <button
-							
-							type="submit" id="modificar" class="btn"> Modificar</button>
+						<a href="UsuarioController?action=delete&id=<%=u.getId()%>"
+							type="submit" id="eliminar" class="btn"> Eliminar</a>
+						<button type="submit" id="modificar" class="btn">
+							Modificar</button>
 					</div>
 				</div>
 

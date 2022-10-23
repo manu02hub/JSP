@@ -27,14 +27,14 @@
 					<%
 					if (request.getSession().getAttribute("usuario") == null) {
 					%>
-				
 
-					 <%@include file="../login/login.jsp"%>
-					 <li><a href="#" id="show-login">LOGIN</a></li>
+
+					<%@include file="../login/login.jsp"%>
+					<li><a href="#" id="show-login">LOGIN</a></li>
 					<%
 					} else {
 					%>
-						<li><a href="ClienteController?action=index">LOGIN</a></li>
+					<li><a href="ClienteController?action=index">LOGIN</a></li>
 					<!-- <li><a href="AuthController?action=home">LOGIN</a></li> -->
 					<%
 					}

@@ -9,7 +9,7 @@
 /*Boton eliminar*/
 #eliminar {
 	color: white; /*Color letra*/
-	background-color: red; /*Color fondo*/	
+	background-color: red; /*Color fondo*/
 }
 
 /*Boton modificar*/
@@ -37,20 +37,22 @@
 	color: black; /*Color letra*/
 }
 
-#contenedorBotones{
-	text-align:center;
+#contenedorBotones {
+	text-align: center;
 }
 
 .btnUsu {
-	width:100%;
+	width: 100%;
 	padding: 5px 10px 5px 10px;
 	background: white; /*Color fondo*/
 	color: black; /*Color letra*/
 }
+
 .btnUsu:hover {
 	background: black; /*Color fondo*/
 	color: white; /*Color letra*/
 }
+
 #btnRegistro {
 	background: black; /*Color fondo*/
 	color: white; /*Color letra*/

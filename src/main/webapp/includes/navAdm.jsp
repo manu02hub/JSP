@@ -67,12 +67,12 @@ body {
 
 	<div class="topnav" id="myTopnav">
 		<a href="ClienteController?action=index" class="active"></i>Clientes</a> <a
-			href="MarcaController?action=index">Marcas</a>
-		<a href="ModeloController?action=index">Modelos</a>
-		<a href="UsuarioController?action=index">Usario</a>
-		<a href="AuthController?action=logout">Cerrar Sesion</a>
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-			<i class="fa fa-bars"></i>
+			href="MarcaController?action=index">Marcas</a> <a
+			href="ModeloController?action=index">Modelos</a> <a
+			href="UsuarioController?action=index">Usario</a> <a
+			href="AuthController?action=logout">Cerrar Sesion</a> <a
+			href="javascript:void(0);" class="icon" onclick="myFunction()"> <i
+			class="fa fa-bars"></i>
 		</a>
 	</div>
 

@@ -5,7 +5,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="daw"%>
-<%@ include file = "../login/login-validation.jsp" %>
+<%@ include file="../login/login-validation.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>

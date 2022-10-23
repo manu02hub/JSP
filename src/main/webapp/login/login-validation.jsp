@@ -1,4 +1,4 @@
-<%@page import="imf.garaje.models.Usuario" %>
+<%@page import="imf.garaje.models.Usuario"%>
 <%
 
 //Si existe usuario loguado puede entrar

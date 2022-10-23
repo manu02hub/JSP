@@ -115,6 +115,4 @@ public class Usuario {
 				+ password + ", image=" + image + ", role=" + role + "]";
 	}
 
-	
-
 }

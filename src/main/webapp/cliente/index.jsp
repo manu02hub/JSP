@@ -61,9 +61,9 @@
 							<td>${cliente.getNombre()}</td>
 							<td>${cliente.getEmail()}</td>
 							<td><a
-								href="ClienteController?action=delete&id=${marca.getId_marca()}"
+								href="ClienteController?action=delete&id=${cliente.getId()}"
 								type="button" id="eliminar" class="btn"> Eliminar</a> <a
-								href="ClienteController?action=edit&id=${marca.getId_marca()}"
+								href="ClienteController?action=edit&id=${cliente.getId()}"
 								type="button" id="modificar" class="btn"> Modificar</a></td>
 						</tr>
 					</daw:forEach>

@@ -50,10 +50,10 @@ public class ModeloDAO implements ModeloBd {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		// Cierro conexion
 		conn = conexion.desconectar();
-		
+
 		// retorno modelo
 		return modelo;
 
@@ -64,7 +64,7 @@ public class ModeloDAO implements ModeloBd {
 
 		// Sentencia sql para eliminar un modelo por id
 		String sql = "DELETE FROM modelo WHERE id_modelo = " + id;
-		
+
 		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
@@ -77,18 +77,18 @@ public class ModeloDAO implements ModeloBd {
 		}
 		// Cierro conexion
 		conn = conexion.desconectar();
-		
+
 		// retorno true en caso de que se haya ejecutado bien la sentencia sql
 		return true;
 	}
 
 	@Override
 	public Modelo actualizarModelo(Modelo modelo) {
-		
-		// Sentencia sql para actualizar  un modelo de la bd
+
+		// Sentencia sql para actualizar un modelo de la bd
 		String sql = "UPDATE modelo SET nombre_modelo = '" + modelo.getNombre_modelo() + "',anno = '" + modelo.getAnno()
 				+ "',foto_modelo = '" + modelo.getFoto_modelo() + "' WHERE id_modelo=" + modelo.getId_modelo();
-		
+
 		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
@@ -103,13 +103,13 @@ public class ModeloDAO implements ModeloBd {
 		return modelo;
 	}
 
-	//Metodo no funcional
+	// Metodo no funcional
 	@Override
 	public Modelo buscarModelo(int id) {
-		
+
 		// Sentencia sql para buscar un modelo por id
 		String sql = "SELECT* FROM modelo WHERE id_modelo = " + id;
-		
+
 		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
@@ -129,7 +129,7 @@ public class ModeloDAO implements ModeloBd {
 		}
 		// Cierro conexion
 		conn = conexion.desconectar();
-		
+
 		// retorno modelo
 		return modelo;
 	}
@@ -165,10 +165,10 @@ public class ModeloDAO implements ModeloBd {
 	public ArrayList<Modelo> getModelos() {
 
 		listado = new ArrayList<Modelo>();
-		
+
 		// Sentencia sql para obtener todos los datos de la tabla modelo
 		String sql = "SELECT* FROM modelo";
-		
+
 		// Creo conexion y realizo sentencia sql
 		try {
 

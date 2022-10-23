@@ -12,7 +12,7 @@ import imf.garaje.interfaces.MarcaBd;
 import imf.garaje.models.Cliente;
 import imf.garaje.models.Marca;
 
-public class MarcaDAO implements MarcaBd{
+public class MarcaDAO implements MarcaBd {
 
 	Conexion conexion = new Conexion();
 	Connection conn;
@@ -44,7 +44,7 @@ public class MarcaDAO implements MarcaBd{
 		// Cierro conexion
 		conn = conexion.desconectar();
 
-		//retorno cliente
+		// retorno cliente
 		return marca;
 	}
 
@@ -66,16 +66,17 @@ public class MarcaDAO implements MarcaBd{
 		}
 		// Cierro conexion
 		conn = conexion.desconectar();
-		
-		//retorno cliente
+
+		// retorno cliente
 		return true;
 	}
 
 	@Override
 	public Marca actualizarMarca(Marca marca) {
 		// Sentencia sql para obtener un actualizar datos de una marca
-		String sql = "UPDATE marca SET nombre_marca = '" + marca.getNombre_marca() + "', foto_marca = '" + marca.getFoto_marca() + "' WHERE id_marca=" + marca.getId_marca();
-		
+		String sql = "UPDATE marca SET nombre_marca = '" + marca.getNombre_marca() + "', foto_marca = '"
+				+ marca.getFoto_marca() + "' WHERE id_marca=" + marca.getId_marca();
+
 		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
@@ -87,11 +88,11 @@ public class MarcaDAO implements MarcaBd{
 		// Cierro conexion
 		conn = conexion.desconectar();
 
-		//retorno cliente
+		// retorno cliente
 		return marca;
 	}
-	
-	//Metodo no funcional
+
+	// Metodo no funcional
 	@Override
 	public Marca buscarMarca(int id) {
 		// Sentencia sql para obtener un marca por id
@@ -115,8 +116,8 @@ public class MarcaDAO implements MarcaBd{
 		}
 		// Cierro conexion
 		conn = conexion.desconectar();
-		
-		//retorno cliente
+
+		// retorno cliente
 		return marca;
 	}
 
@@ -124,7 +125,7 @@ public class MarcaDAO implements MarcaBd{
 	public Marca find(int id) {
 		// Sentencia sql para obtener una marca por id
 		String sql = "SELECT * FROM marca WHERE id_marca = " + id;
-		
+
 		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
@@ -143,8 +144,8 @@ public class MarcaDAO implements MarcaBd{
 		}
 		// Cierro conexion
 		conn = conexion.desconectar();
-		
-		//retorno cliente
+
+		// retorno cliente
 		return marca;
 	}
 
@@ -178,7 +179,7 @@ public class MarcaDAO implements MarcaBd{
 		// Cierro conexion
 		conn = conexion.desconectar();
 
-		//retorno cliente
+		// retorno cliente
 		return listado;
 	}
 }

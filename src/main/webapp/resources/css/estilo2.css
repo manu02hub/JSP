@@ -1,7 +1,9 @@
 @charset "ISO-8859-1";
+
 body {
 	margin: 0px; /*margen arriba derecha abajo izqueirda*/
 }
+
 .blg {
 	text-align: center; /**/
 }
@@ -11,11 +13,13 @@ body {
 }
 
 #blg2 {
-	margin: 30px 20px 0px 20px; /* /*margen arriba derecha abajo izqueirda*/
+	margin: 30px 20px 0px 20px;
+	/* /*margen arriba derecha abajo izqueirda*/
 }
 
 #blg3 {
-	margin: -20px 150px 0px 150px; /* /*margen arriba derecha abajo izqueirda*/
+	margin: -20px 150px 0px 150px;
+	/* /*margen arriba derecha abajo izqueirda*/
 }
 
 #blg4 {
@@ -27,12 +31,13 @@ body {
 	margin-top: 30px; /*margen arriba */
 }
 
-#textoNorris{
-	margin-top:100px; /*margen arriba */
+#textoNorris {
+	margin-top: 100px; /*margen arriba */
 }
 
 .contenedor {
-	position: relative; /*no esta en su posicion normal, pasa por encima de los demás elementos*/
+	position: relative;
+	/*no esta en su posicion normal, pasa por encima de los demás elementos*/
 	margin-top: -50px; /*margen arriba*/
 	padding: 35px; /*relleno arriba derecha abajo izquierda*/
 	background: #c0c0c0; /*fondo color*/
