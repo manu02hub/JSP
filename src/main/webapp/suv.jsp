@@ -5,12 +5,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta charset="UTF-8" />
+<link rel="stylesheet" text="text/css" href="resources/css/login.css" />
+<link rel="stylesheet" text="text/css" href="resources/css/button.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/footer.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/estilo2.css" />
 <link rel="stylesheet" text="text/css"
 	href="resources/css/responsive.css" />
 <link rel="stylesheet" text="text/css"
 	href="resources/css/navs/navIndex.css" />
+<script src="resources/js/jquery-3.6.0.min.js"></script>
 
 <title>Insert title here</title>
 </head>
@@ -39,16 +42,16 @@
 	<%@include file="includes/navIndex.jsp"%>
 
 	<div class="row blg" id="blg2">
-		<div class="col-sm-6 col-md-6 col-lg-6">
-			<img src="http://localhost/img/DWES/p1/suv3.jpg" width="702px"
-				height="437px">
+		<div class="col-sm-12 col-md-12 col-lg-6">
+			<img src="http://localhost/img/DWES/p1/suv3.jpg" width="100%"
+				height="86%">
 			<div class="contenedor">
 				<strong>LA NUEVA GENERACION DE SUV 2022 IMPULSA LA NUEVA
 					TECNOLOGIA</strong>
 			</div>
 		</div>
-		<div class="col-sm-6 col-md-6 col-lg-6">
-			<img src="http://localhost/img/DWES/p1/suv6.jpg" width="700px">
+		<div class="col-sm-12 col-md-12 col-lg-6">
+			<img src="http://localhost/img/DWES/p1/suv6.jpg" width="100%">
 			<div class="contenedor">
 				<strong>MAS SALVAJE QUE ANTES</strong>
 			</div>
@@ -59,7 +62,7 @@
 		<div class="col-lg-1 col-md-1 col-sm-1"></div>
 		<div class="col-lg-10 col-md-10 col-sm-10 blg">
 			<div>
-				<img src="http://localhost/img/DWES/p1/suv1.jpg" width="800px">
+				<img src="http://localhost/img/DWES/p1/suv1.jpg" width="100%">
 			</div>
 			<div class="contenedor">
 				<strong>LA NUEVA BESTIA EN EL MUNDO DEL MOTOR</strong> <strong>HA
@@ -69,7 +72,7 @@
 		<div class="col-lg-1 col-md-1 col-sm-1"></div>
 	</div>
 	<div class="row blg" id="blg5">
-		<div class="col-sm-6 col-md-6 col-lg-6" id="blg4">
+		<div class="col-sm-12 col-md-12 col-lg-6" id="blg4">
 			<div id="textoNorris">
 				<strong>Loubet se une a M-Sport Ford para la temporada 2022
 					del WRC</strong>
@@ -89,8 +92,8 @@
 
 
 		</div>
-		<div class="col-sm-6 col-md-6 col-lg-6">
-			<img src="http://localhost/img/DWES/p1/suv4.jpg" width="700px">
+		<div class="col-sm-12 col-md-12 col-lg-6">
+			<img src="http://localhost/img/DWES/p1/suv4.jpg" width="100%">
 			<div class="contenedor" id="blg3">
 				<strong>NORRIS</strong>
 			</div>
@@ -99,6 +102,7 @@
 
 
 	<%@include file="includes/footer.jsp"%>
+	<script src="resources/js/modal.js"></script>
 
 </body>
 </html>

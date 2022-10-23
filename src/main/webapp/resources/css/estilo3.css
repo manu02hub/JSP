@@ -6,116 +6,119 @@ body {
 
 #part1 {
 	background: url('http://localhost/img/DWES/p1/sports1.jpg');
-	align-items: center;
-	background-position: center;
-	background-size: cover;
-	height: 600px;
+	/* imagen de fondo */
+	align-items: center; /* centra */
+	background-position: center; /* posicion de la imagen centrada */
+	background-size: cover; /* Posicionamiento fondo */
+	height: 600px; /* alto */
 }
 
 .col1 {
-	margin-left: 10px; /* margen */
-	margin-right: 10px;
-	font-family: 'Playfair Display', serif;
-	text-align: center;
-	color: black;
-	text-decoration-color: black;
+	margin-left: 10px; /* margen izquierdo */
+	margin-right: 10px; /* margen derecho*/
+	font-family: 'Playfair Display', serif; /* tipo de letra */
+	text-align: center; /* posicion centrado */
+	color: black; /* color letra */
 }
 
 h2 {
-	font-size: 33px;
+	font-size: 33px; /* tamaño de letra */
 }
 
 h3 {
-	font-size: 25px;
-	margin-top: -30px;
+	font-size: 25px; /* tamaño de letra */
+	margin-top: -30px; /* margen de arriba */
 }
 
 .col2 p {
-	margin-left: 20px; /* margen */
-	margin-right: 20px;
-	padding-top: 10px;
-	font-family: 'Noto Sans JP', sans-serif;
-	font-size: 16px;
-	text-align: center;
-	color: black;
-	text-decoration-color: black;
+	margin-left: 20px; /* margen izquierdo */
+	margin-right: 20px; /* margen derecho*/
+	padding-top: 10px; /* margen arriba*/
+	font-family: 'Noto Sans JP', sans-serif; /* tipo de ltra */
+	font-size: 16px; /* tamaño de letra */
+	text-align: center; /* text */
+	color: black; /* color texto */
 }
 
 .colInterior {
-	margin-top: 1em;
-	margin-left: 0; /* margen */
-	margin-right: 0;
-	background-repeat: no-repeat;
-	background-size: cover;
-	text-align: center;
-	height:300px;
+	margin-top: 1em; /* margen arriba */
+	margin-left: 0; /* margen izquierda */
+	margin-right: 0; /* margen derecho */
+	background-repeat: no-repeat; /* no repite la imagen de fondo */
+	background-size: cover; /*  */
+	text-align: center; /*  */
+	height: 300px; /* alto */
 }
 
-#img3{
+#img3 {
 	background: url('http://localhost/img/DWES/p1/marchas.jpeg');
+	/* fondo imagen */
 }
 
-#img4{
+#img4 {
 	background: url('http://localhost/img/DWES/p1/asientos.jpeg');
+	/* fondo imagen */
 }
 
-#img5{
+#img5 {
 	background: url('http://localhost/img/DWES/p1/volante.jpeg');
+	/* fondo imagen */
 }
 
-#img6{
+#img6 {
 	background: url('http://localhost/img/DWES/p1/dentroCoche.jpeg');
+	/* fondo imagen */
 }
 
 .col3456 h3, h4 {
-	margin-left: 10px;
-	font-size: 20px;
-	font-family: 'Playfair Display', serif;
-	text-align: left;
-	color: white;
-	text-decoration-color: white;
+	margin-left: 10px; /* margen izquierdo */
+	font-size: 20px; /* tamaño letra */
+	font-family: 'Playfair Display', serif; /* tipo de letra */
+	text-align: left; /* posicion texto izquierda */
+	color: white; /*color texto */
 }
 
 .col7 h2 {
-	margin-left: 10px; /* margen */
-	margin-right: 10px;
-	padding-top: 50px;
-	font-family: 'Playfair Display', serif;
-	font-size: 33px;
+	margin-left: 10px; /* margen izquierdo */
+	margin-right: 10px; /* margen derecha */
+	padding-top: 50px; /* margen arriba*/
+	font-family: 'Playfair Display', serif; /* tipo de letra */
+	font-size: 33px; /* tamaño de letra */
+	text-align: center; /* centra */
+	color: black; /* color texto */
+}
+
+.colExterior {
+	margin-top: 1em; /* margen arriba */
+	margin-left: 1em; /*  margen izquierdo */
+	margin-right: 0; /* margen derecha */
+	background-repeat: no-repeat; /* no repite la imagen de fondo */
+	background-size: cover;
 	text-align: center;
-	color: black;
-	text-decoration-color: black;
 }
 
-.colExterior{
-	margin-top: 1em;
-    margin-left: 1em; /* margen */
-    margin-right: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
+.colExterior h2 {
+	padding-top: 350px; /* relleno hacia arriba */
+	color: white; /* color texto */
 }
 
-.colExterior h2{
-    padding-top: 350px;
-    color: white;
-    text-decoration-color: white;
-}
-.colExterior p{
-    padding-top: 10px;
-    color: white;
-    text-decoration-color: white;
+.colExterior p {
+	padding-top: 10px; /* relleno */
+	color: white; /* color texto */
 }
 
-#exterior1{
-	  background-image: url("http://localhost/img/DWES/p1/coche2018.jpeg");
+#exterior1 {
+	background-image: url("http://localhost/img/DWES/p1/coche2018.jpeg");
+	/* fondo imagen */
 }
 
-#exterior2{
-	 background-image: url("http://localhost/img/DWES/p1/cocheRueda.jpeg");
+#exterior2 {
+	background-image: url("http://localhost/img/DWES/p1/cocheRueda.jpeg");
+	/* fondo imagen */
 }
 
-#exterior3{
-	 background-image: url("http://localhost/img/DWES/p1/cocheParteTrasera.jpeg");
+#exterior3 {
+	background-image:
+		url("http://localhost/img/DWES/p1/cocheParteTrasera.jpeg");
+	/* fondo imagen */
 }
-

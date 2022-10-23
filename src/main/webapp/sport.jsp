@@ -5,6 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta charset="UTF-8" />
+<link rel="stylesheet" text="text/css" href="resources/css/login.css" />
+<link rel="stylesheet" text="text/css" href="resources/css/button.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/footer.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/estilo3.css" />
 <link rel="stylesheet" text="text/css"
@@ -23,6 +25,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
 	rel="stylesheet">
+<script src="resources/js/jquery-3.6.0.min.js"></script>
 
 <title>Insert title here</title>
 </head>
@@ -68,16 +71,16 @@
 				segura.</p>
 			<p>CARACTERISTICAS</p>
 		</div>
-		<div class="colInterior col-sm-3 col-md-3 col-lg-3" id="img3">
+		<div class="colInterior col-sm-12 col-md-6 col-lg-3" id="img3">
 			<h4>TAPICERIA CONDUCTOR</h4>
 		</div>
-		<div class="colInterior col-sm-3 col-md-3 col-lg-3" id="img4">
+		<div class="colInterior col-sm-12 col-md-6 col-lg-3" id="img4">
 			<h4>ASIENTOS TRANSPIRABLES</h4>
 		</div>
-		<div class="colInterior col-sm-3 col-md-3 col-lg-3" id="img5">
+		<div class="colInterior col-sm-12 col-md-6 col-lg-3" id="img5">
 			<h4>MAYOR CONTROL DEL CONDUCTOR</h4>
 		</div>
-		<div class="colInterior col-sm-3 col-md-3 col-lg-3" id="img6">
+		<div class="colInterior col-sm-12 col-md-6 col-lg-3" id="img6">
 			<h4>MAS GADGETS</h4>
 		</div>
 	</div>
@@ -87,15 +90,15 @@
 	</div>
 
 	<div class="row">
-		<div class="colExterior col-sm-4 col-md-4 col-lg-4" id="exterior1">
+		<div class="colExterior col-sm-12 col-md-12 col-lg-4" id="exterior1">
 			<h2>FORD 2018</h2>
 			<p>CONOZCALAS AQUI</p>
 		</div>
-		<div class="colExterior col-sm-4 col-md-4 col-lg-4" id="exterior2">
+		<div class="colExterior col-sm-12 col-md-12 col-lg-4" id="exterior2">
 			<h2>RUEDAS PERSONALIZADAS</h2>
 			<p>SABER MAS</p>
 		</div>
-		<div class="colExterior col-sm-4 col-md-4 col-lg-4" id="exterior3">
+		<div class="colExterior col-sm-12 col-md-12 col-lg-4" id="exterior3">
 			<h2>MALETERO EXTENSIBLE</h2>
 			<p>MEJORAR AQUI</p>
 		</div>
@@ -104,4 +107,5 @@
 </body>
 
 <%@include file="includes/footer.jsp"%>
+<script src="resources/js/modal.js"></script>
 </html>

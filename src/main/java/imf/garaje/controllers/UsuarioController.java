@@ -11,7 +11,9 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 
+import imf.garaje.models.Cliente;
 import imf.garaje.models.Usuario;
+import imf.garaje.modelsDAO.ClienteDAO;
 import imf.garaje.modelsDAO.UsuarioDAO;
 
 /**
@@ -26,13 +28,18 @@ public class UsuarioController extends HttpServlet {
 
 	Usuario usuario;
 	UsuarioDAO usuarioDAO = new UsuarioDAO();
+	Cliente cliente;
+	ClienteDAO clienteDAO = new ClienteDAO();
+	ArrayList<Cliente> listadoClientes;
 
 	String nombre, email, password,dni;
 
-	String index = "index.jsp";
-	String indexUsu = "usuario/index.jsp";
+	//Rutas
+	String index = "usuario/index.jsp";
+	String indexUsu = "cliente/index.jsp";
 	String create = "usuario/create.jsp";
 	String edit = "usuario/edit.jsp";
+	String salir = "index.jsp";
 
 	ArrayList<Usuario> usuarios;
 
@@ -69,8 +76,8 @@ public class UsuarioController extends HttpServlet {
 		case "delete":
 			id = Integer.parseInt(request.getParameter("id"));
 			usuarioDAO.delete(id);
-
-			acceso = index;
+			request.getSession().removeAttribute("usuario");
+			acceso = salir;
 			break;
 
 		default:
@@ -113,6 +120,12 @@ public class UsuarioController extends HttpServlet {
 				request.getSession().setAttribute("usuario", usuarioDAO.getUsuario(email, getMD5(password)));
 				ArrayList<Usuario> usuarios = usuarioDAO.all();
 				request.getSession().setAttribute("usuarios", usuarios);
+				
+				//recojo todos los clientes
+				listadoClientes = clienteDAO.getclientes();
+
+				//Mandamos este array a la siguiente vista
+				request.setAttribute("cli", listadoClientes);
 				acceso = indexUsu;
 				
 			} else {
@@ -127,12 +140,10 @@ public class UsuarioController extends HttpServlet {
 			nombre = request.getParameter("nombre");
 			email = request.getParameter("email");
 			password = request.getParameter("password");
-			dni =request.getParameter("dni");
 
 			usuario = new Usuario();
 			usuario.setId(id);
 			usuario.setNombre(nombre);
-			usuario.setDni(dni);
 			usuario.setEmail(email);
 
 			if (password != null && password != "") {
@@ -140,8 +151,9 @@ public class UsuarioController extends HttpServlet {
 			}
 			// Si usuario no introduce password, no hay setPassword. Queda en null
 			usuarioDAO.update(usuario);
-
-			acceso = index;
+			
+			request.getSession().removeAttribute("usuario");
+			acceso = salir;
 			break;
 
 		}

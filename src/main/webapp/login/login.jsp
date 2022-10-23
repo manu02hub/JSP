@@ -6,17 +6,27 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+<!-- LLAMA A LA FUNCION OCULTAR DEL JS -->
 <body onload="Ocultar()">
 
 	<div class="popup">
 		<div class="close-btn">&times;</div>
-		<div class="form-element">
-			<button id="btnLogin" onclick="login()">Sign in</button>
+		<div class="row" id="contenedorBotones">
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="form-element">
+					<button class="btnUsu" onclick="login()">Sign in</button>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="form-element">
+					<button class="btnUsu" onclick="registro()">Registro</button>
+				</div>
+			</div>
+
 		</div>
-		<div class="form-element">
-			<button id="btnRegsitro" onclick="registro()">Registro</button>
-		</div>
-		
+
+		<!-- FORM LOGIN -->
 		<form class="form" id="showLogin" method="POST"
 			action="AuthController?action=login">
 			<div class="form-element">
@@ -34,7 +44,7 @@
 
 		</form>
 
-
+		<!-- FORM REGISTRO -->
 		<form class="form" id="showRegsitro" method="POST"
 			action="UsuarioController?action=create">
 
@@ -43,8 +53,8 @@
 					name="nombre" placeholder="Nombre Apellidos">
 			</div>
 			<div class="form-element">
-				<label for="dni">DNI</label> <input type="text" id="dni"
-					name="dni" placeholder="12345678X">
+				<label for="dni">DNI</label> <input type="text" id="dni" name="dni"
+					placeholder="12345678X">
 			</div>
 			<div class="form-element">
 				<label for="email">Email</label> <input type="text" id="email2"

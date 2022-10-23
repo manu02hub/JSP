@@ -12,65 +12,69 @@ import java.util.ArrayList;
 import imf.garaje.models.Marca;
 import imf.garaje.modelsDAO.MarcaDAO;
 
-
 /**
  * Servlet implementation class MarcaController
  */
 public class MarcaController extends HttpServlet {
-private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;
+
 	// Distingue entre las vistas a las que tengo que ridereccionar
-			String acceso;
-			// Variable que recibo por url y que me enlaza con el metodo o vista
-			// correspondiente
-			String action;
-			String filtro = null;
+	String acceso;
+	// Variable que recibo por url y que me enlaza con el metodo o vista
+	// correspondiente
+	String action;
+	String filtro = null;
 
-			int id;
-			String nombre;
-			String foto;
-		
+	int id;
+	String nombre;
+	String foto;
 
-			String index = "marca/index.jsp";
-			String create = "marca/create.jsp";
-			String edit = "marca/update.jsp";
+	// Rutas
+	String index = "marca/index.jsp";
+	String create = "marca/create.jsp";
+	String edit = "marca/update.jsp";
 
-			Marca marca;
-			MarcaDAO marcaDAO = new MarcaDAO();
-			ArrayList<Marca> listadoMarcas;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MarcaController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	Marca marca;
+	MarcaDAO marcaDAO = new MarcaDAO();
+	ArrayList<Marca> listadoMarcas;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public MarcaController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		// response.getWriter().append("Served at: ").append(request.getContextPath());
+
 		acceso = "";
 		action = request.getParameter("action"); // valor que recojo por url
-		
+
 		switch (action) {
 		case "index":
 
+			// recojo todos las marcas
 			listadoMarcas = marcaDAO.getMarcas();
 
+			// Mandamos este array a la siguiente vista
 			request.setAttribute("mar", listadoMarcas);
 			acceso = index;
 			break;
 
 		case "buscadorCliente":
 
+			// No funcional
 			filtro = request.getParameter("buscadorCliente");
 
-			//listadoMarcas = marcaDAO.buscarMarca(request.getParameter("buscador"));
+			// listadoMarcas = marcaDAO.buscarMarca(request.getParameter("buscador"));
 
 			request.setAttribute("mar", listadoMarcas);
 			acceso = index;
@@ -91,68 +95,89 @@ private static final long serialVersionUID = 1L;
 			break;
 
 		case "delete":
+
+			// En caso de eliminar recoemos id y llamamos al método correspondiente
 			id = Integer.parseInt(request.getParameter("id"));
 			marcaDAO.eliminarMarca(id);
+
+			listadoMarcas = marcaDAO.getMarcas();
+
+			// Mandamos este array a la siguiente vista
+			request.setAttribute("mar", listadoMarcas);
 
 			acceso = index;
 			break;
 
 		}
-		
+
 		// Lanzar la vista en funcion del action recibido
-				RequestDispatcher vista = request.getRequestDispatcher(acceso);
-				vista.forward(request, response);
+		RequestDispatcher vista = request.getRequestDispatcher(acceso);
+		vista.forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
 		// doGet(request, response);
-				acceso = "";
-				action = request.getParameter("action"); // valor que recojo por url
+		// doGet(request, response);
+		acceso = "";
+		action = request.getParameter("action"); // valor que recojo por url
 
-				switch (action) {
-				case "create":
-					nombre = request.getParameter("nombre_marca");
-					foto = request.getParameter("foto_marca");
+		switch (action) {
+		case "create":
 
-					marca = new Marca();
-					marca.setFoto_marca("http://localhost/img/DWES/p1/"+foto);
-					marca.setNombre_marca(nombre);
-				
-					System.out.println(marca.toString());
+			// recogemos los datos después de rellear el formulario
+			nombre = request.getParameter("nombre_marca");
+			foto = request.getParameter("foto_marca");
 
-					marcaDAO.crearMarca(marca);
-					acceso = index;
+			// Creamos un nuevo cliente con estos datos
+			marca = new Marca();
+			marca.setFoto_marca("http://localhost/img/DWES/p1/" + foto);
+			marca.setNombre_marca(nombre);
 
-					break;
+			marcaDAO.crearMarca(marca);
 
-				case "update":
-					id = Integer.parseInt(request.getParameter("id"));
-					nombre = request.getParameter("nombre_marca");
-					foto = request.getParameter("foto");
+			listadoMarcas = marcaDAO.getMarcas();
 
-					marca = new Marca();
-					marca.setId_marca(id);
-					marca.setNombre_marca(nombre);
-					marca.setFoto_marca("http://localhost/img/DWES/p1/"+foto);
-					
+			// Mandamos este array a la siguiente vista
+			request.setAttribute("mar", listadoMarcas);
+			acceso = index;
 
-					marcaDAO.actualizarMarca(marca);
+			break;
 
-					acceso = index;
-					break;
+		case "update":
 
-				}
+			// recogemos de nuevo los datos pero esta vez obtenemos el id para actualizar
+			// datos
+			id = Integer.parseInt(request.getParameter("id"));
+			nombre = request.getParameter("nombre_marca");
+			foto = request.getParameter("foto");
 
-				// Lanzar la vista en funcion del action recibido
-				// Lanzar la vista en funcion del action recibido
-				RequestDispatcher vista = request.getRequestDispatcher(acceso);
-				vista.forward(request, response);
+			marca = new Marca();
+			marca.setId_marca(id);
+			marca.setNombre_marca(nombre);
+			marca.setFoto_marca("http://localhost/img/DWES/p1/" + foto);
 
-			}
+			marcaDAO.actualizarMarca(marca);
+
+			listadoMarcas = marcaDAO.getMarcas();
+
+			// Mandamos este array a la siguiente vista
+			request.setAttribute("mar", listadoMarcas);
+
+			acceso = index;
+			break;
+
+		}
+
+		// Lanzar la vista en funcion del action recibido
+		RequestDispatcher vista = request.getRequestDispatcher(acceso);
+		vista.forward(request, response);
+
+	}
 
 }

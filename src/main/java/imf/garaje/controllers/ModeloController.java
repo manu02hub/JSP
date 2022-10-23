@@ -2,7 +2,6 @@ package imf.garaje.controllers;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,7 +10,6 @@ import java.util.ArrayList;
 
 import imf.garaje.models.Modelo;
 import imf.garaje.modelsDAO.ModeloDAO;
-
 
 /**
  * Servlet implementation class ModeloController
@@ -32,6 +30,7 @@ public class ModeloController extends HttpServlet {
 
 	String filtro = null;
 
+	// Rutas
 	String index = "modelo/index.jsp";
 	String create = "modelo/create.jsp";
 	String edit = "modelo/update.jsp";
@@ -55,22 +54,23 @@ public class ModeloController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
-
 		acceso = "";
 		action = request.getParameter("action"); // valor que recojo por url
 
 		switch (action) {
 		case "index":
 
+			// recojo todos los modelos
 			listadoModelo = modeloDAO.getModelos();
 
+			// Mandamos este array a la siguiente vista
 			request.setAttribute("mode", listadoModelo);
 			acceso = index;
 			break;
 
 		case "buscadorCliente":
 
+			// Caso no funcional
 			filtro = request.getParameter("buscadorCliente");
 
 			// listadoMarcas = marcaDAO.buscarMarca(request.getParameter("buscador"));
@@ -94,8 +94,16 @@ public class ModeloController extends HttpServlet {
 			break;
 
 		case "delete":
+
+			// En caso de eliminar recoemos id y llamamos al método correspondiente
 			id = Integer.parseInt(request.getParameter("id"));
 			modeloDAO.eliminarModelo(id);
+
+			// recojo todos los modelos
+			listadoModelo = modeloDAO.getModelos();
+
+			// Mandamos este array a la siguiente vista
+			request.setAttribute("mode", listadoModelo);
 
 			acceso = index;
 			break;
@@ -120,21 +128,33 @@ public class ModeloController extends HttpServlet {
 
 		switch (action) {
 		case "create":
+
+			// recogemos los datos después de rellear el formulario
 			nombre = request.getParameter("nombre_modelo");
-			foto = request.getParameter("http://localhost/img/DWES/p1/"+foto);
+			foto = request.getParameter("http://localhost/img/DWES/p1/" + foto);
 			anno = Integer.parseInt(request.getParameter("anno"));
 
+			// Creamos un nuevo modelo con estos datos
 			modelo = new Modelo();
 			modelo.setFoto_modelo(foto);
 			modelo.setNombre_modelo(nombre);
 			modelo.setAnno(anno);
 
 			modeloDAO.crearModelo(modelo);
+
+			// recojo todos los modelos
+			listadoModelo = modeloDAO.getModelos();
+
+			// Mandamos este array a la siguiente vista
+			request.setAttribute("mode", listadoModelo);
 			acceso = index;
 
 			break;
 
 		case "update":
+
+			// recogemos de nuevo los datos pero esta vez obtenemos el id para actualizar
+			// datos
 			id = Integer.parseInt(request.getParameter("id"));
 			nombre = request.getParameter("nombre_modelo");
 			foto = request.getParameter("foto_modelo");
@@ -142,11 +162,17 @@ public class ModeloController extends HttpServlet {
 
 			modelo = new Modelo();
 			modelo.setId_modelo(id);
-			modelo.setFoto_modelo("http://localhost/img/DWES/p1/"+foto);
+			modelo.setFoto_modelo("http://localhost/img/DWES/p1/" + foto);
 			modelo.setNombre_modelo(nombre);
 			modelo.setAnno(anno);
 
 			modeloDAO.actualizarModelo(modelo);
+
+			// recojo todos los modelos
+			listadoModelo = modeloDAO.getModelos();
+
+			// Mandamos este array a la siguiente vista
+			request.setAttribute("mode", listadoModelo);
 
 			acceso = index;
 			break;
@@ -158,6 +184,5 @@ public class ModeloController extends HttpServlet {
 		vista.forward(request, response);
 
 	}
-
 
 }

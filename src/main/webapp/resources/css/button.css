@@ -1,28 +1,57 @@
 @charset "ISO-8859-1";
 
-.btn{
-	text-decoration:none;
-	padding:10px;
-	border-radius:5px;
+.btn {
+	text-decoration: none; /*Quita el suv¡brayado al enlace*/
+	padding: 10px; /*Relleno*/
+	border-radius: 5px; /*Borde redondos*/
 }
 
-#eliminar{
-	color:white;
-	background-color:red;
+/*Boton eliminar*/
+#eliminar {
+	color: white; /*Color letra*/
+	background-color: red; /*Color fondo*/	
 }
 
-#modificar{
-	color:black;
-	background-color:yellow;
+/*Boton modificar*/
+#modificar {
+	color: black; /*Color letra*/
+	background-color: yellow; /*Color fondo*/
 }
 
-.btnCookies{
-	padding:10px 15px 10px 15px;
-	background:black;
-	color:white;
+/*Boton crear*/
+#crear {
+	color: white; /*Color letra*/
+	background-color: #00ff40; /*Color fondo*/
 }
 
-.btnCookies:hover{
-	background:white;
-	color:black;
+/*Boton de suv, sport ,moto*/
+.btnCookies {
+	padding: 10px 15px 10px 15px; /*Relleno*/
+	background: black; /*Color fondo*/
+	color: white; /*Color letra*/
+}
+
+/*Raton paso por encima del botons*/
+.btnCookies:hover {
+	background: white; /*Color fondo*/
+	color: black; /*Color letra*/
+}
+
+#contenedorBotones{
+	text-align:center;
+}
+
+.btnUsu {
+	width:100%;
+	padding: 5px 10px 5px 10px;
+	background: white; /*Color fondo*/
+	color: black; /*Color letra*/
+}
+.btnUsu:hover {
+	background: black; /*Color fondo*/
+	color: white; /*Color letra*/
+}
+#btnRegistro {
+	background: black; /*Color fondo*/
+	color: white; /*Color letra*/
 }

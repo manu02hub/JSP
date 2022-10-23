@@ -21,7 +21,5 @@ $('#my-map').vectorMap({
             normalizeFunction: 'polynomial' // la formula de normalizacion de datos
         }]
     },
-    // onRegionTipShow: function(e, el, code){ // al seleccionar una region se muestra el valor que tengan en el array
-    //    el.html(el.html()+' (Poblacion: '+data[code]+')');
-    //}
+    
 });

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import imf.garaje.models.Usuario;
 
 public interface UsuarioBd {
+	
+	//Metodos necesarios para mi clase Usuario DAO
 	public Usuario save(Usuario usuario);
 	public boolean delete(int id);
 	public Usuario update(Usuario usuario);

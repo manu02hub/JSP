@@ -1,9 +1,10 @@
 <%@page import="imf.garaje.models.Usuario" %>
 <%
+
+//Si existe usuario loguado puede entrar
 	if(request.getSession().getAttribute("usuario")!= null){
-		out.println("<p>EXISTE USUARIO LOGUEADO</p>");
+		
 		Usuario u = (Usuario) request.getSession().getAttribute("usuario");
-		out.println("USUARIO LOGUEADO : " + u.getNombre());
 		
 		//out.println(request.getSession().getAttribute("usuario").getEmail());
 	}else{

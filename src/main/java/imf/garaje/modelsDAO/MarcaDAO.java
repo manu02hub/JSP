@@ -29,11 +29,11 @@ public class MarcaDAO implements MarcaBd{
 
 	@Override
 	public Marca crearMarca(Marca marca) {
+		// Sentencia sql para crear una marca
 		String sql = "INSERT INTO marca (foto_marca,nombre_marca) VALUES ('" + marca.getFoto_marca() + "', '"
 				+ marca.getNombre_marca() + "')";
 
-		System.out.println(sql);
-
+		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -41,15 +41,20 @@ public class MarcaDAO implements MarcaBd{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		// Cierro conexion
+		conn = conexion.desconectar();
 
+		//retorno cliente
 		return marca;
 	}
 
 	@Override
 	public boolean eliminarMarca(int id) {
 
+		// Sentencia sql para eliminar una marca
 		String sql = "DELETE FROM marca WHERE id_marca = " + id;
 
+		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
 			statement = conn.createStatement();
@@ -59,12 +64,19 @@ public class MarcaDAO implements MarcaBd{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		// Cierro conexion
+		conn = conexion.desconectar();
+		
+		//retorno cliente
 		return true;
 	}
 
 	@Override
 	public Marca actualizarMarca(Marca marca) {
+		// Sentencia sql para obtener un actualizar datos de una marca
 		String sql = "UPDATE marca SET nombre_marca = '" + marca.getNombre_marca() + "', foto_marca = '" + marca.getFoto_marca() + "' WHERE id_marca=" + marca.getId_marca();
+		
+		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -72,14 +84,20 @@ public class MarcaDAO implements MarcaBd{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		// Cierro conexion
+		conn = conexion.desconectar();
 
+		//retorno cliente
 		return marca;
 	}
-
+	
+	//Metodo no funcional
 	@Override
 	public Marca buscarMarca(int id) {
+		// Sentencia sql para obtener un marca por id
 		String sql = "SELECT* FROM marca WHERE id = " + id;
 
+		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -95,15 +113,19 @@ public class MarcaDAO implements MarcaBd{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		// Cierro conexion
+		conn = conexion.desconectar();
+		
+		//retorno cliente
 		return marca;
 	}
 
 	@Override
 	public Marca find(int id) {
+		// Sentencia sql para obtener una marca por id
 		String sql = "SELECT * FROM marca WHERE id_marca = " + id;
-		System.out.println(sql);
-
+		
+		// Creo conexion y realizo sentencia sql
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -119,6 +141,10 @@ public class MarcaDAO implements MarcaBd{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		// Cierro conexion
+		conn = conexion.desconectar();
+		
+		//retorno cliente
 		return marca;
 	}
 
@@ -127,8 +153,10 @@ public class MarcaDAO implements MarcaBd{
 
 		listado = new ArrayList<Marca>();
 
+		// Sentencia sql para crear obtener los datos de la tabla marca
 		String sql = "SELECT* FROM marca";
 
+		// Creo conexion y realizo sentencia sql
 		try {
 
 			conn = conexion.getConnection();
@@ -147,7 +175,10 @@ public class MarcaDAO implements MarcaBd{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		// Cierro conexion
+		conn = conexion.desconectar();
 
+		//retorno cliente
 		return listado;
 	}
 }

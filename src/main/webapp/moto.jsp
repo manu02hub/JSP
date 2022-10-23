@@ -4,13 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" text="text/css" href="resources/css/login.css" />
+<link rel="stylesheet" text="text/css" href="resources/css/button.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/footer.css" />
 <link rel="stylesheet" text="text/css"
 	href="resources/css/responsive.css" />
 <link rel="stylesheet" text="text/css" href="resources/css/estilo4.css" />
 <link rel="stylesheet" text="text/css"
 	href="resources/css/navs/navIndex.css" />
-
+<link rel="stylesheet" text="text/css"
+	href="resources/css/navs/navIndex.css" />
+<script src="resources/js/jquery-3.6.0.min.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="resources/js/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css"
@@ -46,14 +50,15 @@
 	response.addCookie(cookie);
 	%>
 
+	<!-- INCLUYE INDEX -->
 	<%@include file="includes/navIndex.jsp"%>
-	
+
+	<!-- SOBRE LAS MOTOS -->
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12">
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-4 vehiculosForm">
-					<img src="http://localhost/img/DWES/p1/moto1.jpg" width="500px"
-						width="480px">
+				<div class="col-lg-4 col-md-12 col-sm-12 moto">
+					<img src="http://localhost/img/DWES/p1/moto1.jpg" width="100%">
 					<h4>ULTRA LIMITED</h4>
 					<p>La Ultra Limited 2022 es la experiencia de viaje más
 						completa, ofrece un estilo atrevido y unas características de
@@ -61,23 +66,24 @@
 						dinámico.</p>
 
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 vehiculosForm">
-					<img src="http://localhost/img/DWES/p1/moto2.jpg" width="500px"
-						width="480px">
+				<div class="col-lg-4 col-md-12 col-sm-12 moto">
+					<img src="http://localhost/img/DWES/p1/moto2.jpg" width="100%">
 					<h4>STREET BOB 114</h4>
 					<p>Una dinámica y desnuda bobber teñida de negro. 114 2022 es
 						la base de altas prestaciones perfecta para la personalización.</p>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 vehiculosForm">
-					<img src="http://localhost/img/DWES/p1/moto3.jpg" width="500px"
-						width="480px">
+				<div class="col-lg-4 col-md-12 col-sm-12 moto">
+					<img src="http://localhost/img/DWES/p1/moto3.jpg" width="100%">
 					<h4>NIGTHSTER</h4>
-					<p>Es una máquina nacida de un icono de ayer y evolucionada para los pilotos de hoy. Una moto que combina la clásica silueta Sportster con toda la potencia del motor Revolution</p>
+					<p>Es una máquina nacida de un icono de ayer y evolucionada
+						para los pilotos de hoy. Una moto que combina la clásica silueta
+						Sportster con toda la potencia del motor Revolution</p>
 				</div>
 			</div>
 		</div>
 	</div>
 
+	<!-- DONDE SE CARGA EL MAPA-->
 	<div class="row" id="mapa">
 		<div class="col-sm-12 col-md-12 col-lg-12">
 			<div id="my-map" style="width: 100%; height: 500px;"></div>
@@ -88,6 +94,7 @@
 	<%@include file="includes/footer.jsp"%>
 
 	<script src="resources/js/map.js"></script>
+	<script src="resources/js/modal.js"></script>
 
 </body>
 </html>

@@ -1,12 +1,17 @@
 @charset "ISO-8859-1";
 
-body{
-	margin:0;
+body {
+	margin: 0;
 }
 
-#mapa{
-    padding-top: 50px;
-    padding-bottom: 30px;
-    background-color: #505050;
-    text-align: center;
+#mapa {
+	padding-top: 50px; /*relleno arriba*/
+	padding-bottom: 30px; /*relleno abajo*/
+	background-color: #505050; /*color de fondo*/
+	text-align: center; /*centra*/
+}
+
+.moto {
+	margin: 15px; /*margen arriba derecha abajo izquierda*/
+	text-align: center; /*centra*/
 }

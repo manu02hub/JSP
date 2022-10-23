@@ -1,30 +1,39 @@
-
-
-
-var data = {
-    "ES-B": 200, // Barcelona
-    "ES-M": 300, // Madrid
-    "ES-BI": 400, // Bilbao
-    "ES-O": 500, // Asturias
-    "ES-C": 600, // Coruña
-    "ES-MU": 700, // Murcia
-    "ES-S": 800, // Santander
-    "ES-SE": 900, // Sevilla
-    "ES-Z": 1000, // Zaragoza
-};
-
-$('#my-map').vectorMap({
-    map: 'es_mill', // el mapa del mundo
-    series: {
-        regions: [{
-            values: data, // los valores
-            scale: ['#0d3ce0', '#20B2AA'], // el rango de colores
-            normalizeFunction: 'polynomial' // la formula de normalizacion de datos
-        }]
-    },
-    // onRegionTipShow: function(e, el, code){ // al seleccionar una region se muestra el valor que tengan en el array
-    //    el.html(el.html()+' (Poblacion: '+data[code]+')');
-    //}
+//Mostrar modal
+document.querySelector("#show-login").addEventListener("click", function() {
+	document.querySelector(".popup").classList.add("active");
 });
+//ocultar modal
+document.querySelector(".popup .close-btn").addEventListener("click", function() {
+	document.querySelector(".popup").classList.remove("active");
+});
+
+/*ocultar forms*/
+let ocultar;
+let ocultar2;
+
+function Ocultar() {
+	ocultar = true;
+	ocultar2 = false;
+	$('#showRegsitro').hide();
+}
+function login() {
+	if (ocultar2 === true && ocultar === false) {
+		$('#showLogin').show();
+		$('#showRegsitro').hide();
+		ocultar = true;
+		ocultar2 = false;
+	}
+
+}
+function registro() {
+	if (ocultar === true && ocultar2 === false) {
+		$('#showRegsitro').show();
+		$('#showLogin').hide();
+		ocultar2 = true;
+		ocultar = false;
+	}
+
+}
+
 
 
